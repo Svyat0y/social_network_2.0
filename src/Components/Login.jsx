@@ -26,11 +26,11 @@ const LoginForm = ({handleSubmit}) => {
 	)
 }
 
-// connect login form to redux form
+// connected login form to redux form
 const LoginReduxForm = reduxForm({form: "login"})(LoginForm)
 
-//parent for login form component
-const Login = (props) => {
+//parent component for login form component
+const Login = () => {
 
 	const onSubmit = (formData) => {
 		console.log(formData)
@@ -45,5 +45,5 @@ const Login = (props) => {
 	);
 }
 
-//connect login component to store
+//connected login component to store
 export default connect(null, null)(Login);
