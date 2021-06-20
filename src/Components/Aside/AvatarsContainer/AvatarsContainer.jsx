@@ -13,8 +13,6 @@ const AvatarItem = ({avatarName, avatarImg}) => {
 	)
 }
 
-
-
 const AvatarsContainer = ({avatarsData}) => {
 
 	// get an avatar object from the incoming array in props
@@ -35,6 +33,4 @@ const mapStateToProps = (state) => ({
 })
 
 // connected avatars container to store
-const ConnectedAvatarsContainer = connect(mapStateToProps, null)(AvatarsContainer)
-
-export default ConnectedAvatarsContainer;
+export default connect(mapStateToProps, null)(AvatarsContainer)

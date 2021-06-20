@@ -1,0 +1,37 @@
+/* styles for pagination */
+.pagination_wrapper {
+    min-width: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.numbers_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.pg_number {
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    padding: 5px 12px;
+    border: 1px solid #E8E0CF;
+}
+
+.pg_number_active {
+    color: #E8E0CF;
+    background: rgba(232,224,207, 0.2);
+}
+
+.prevNextBtn {
+    padding: 5px 15px;
+    color: white;
+    background: rgba(232,224,207, 0.2);
+    user-select: none;
+    margin: 0 10px;
+}
+.prevNextBtn:active {
+    transform: scale(0.98);
+}

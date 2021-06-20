@@ -5,7 +5,7 @@ const Profile = () => {
 	return (
 		<div className={style.profile_page}>
 			<div>
-				main
+				profile page
 			</div>
 		</div>
 	);
