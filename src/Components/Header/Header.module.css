@@ -1,4 +1,5 @@
 /* styles for header component */
+
 .header {
     width: 100%;
     text-align: center;
@@ -17,3 +18,5 @@
 .actionLogout_box {
     color: white;
 }
+
+/* styles for header component end */

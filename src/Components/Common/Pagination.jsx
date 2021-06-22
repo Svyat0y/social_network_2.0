@@ -16,7 +16,8 @@ const Pagination = ({onPageChanged, totalCount, pageSize, currentPage, portionSi
 
 	return (
 		<div className={style.pagination_wrapper}>
-			{portionNumber > 1 && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber - 1)}}>Prev</button>}
+			{/*{portionNumber > 1 && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber - 1)}}>Prev</button>}*/}
+			{<button disabled={portionNumber === 1 && true} className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber - 1)}}>Prev</button>}
 			<div>
 				{pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
 					.map((p, index) => <span
@@ -26,7 +27,8 @@ const Pagination = ({onPageChanged, totalCount, pageSize, currentPage, portionSi
 						{p}
 					</span>)}
 			</div>
-			{portionCount > portionNumber && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber + 1)}}>Next</button>}
+			{/*{portionCount > portionNumber && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber + 1)}}>Next</button>}*/}
+			{<button disabled={portionNumber === portionCount && true} className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber + 1)}}>Next</button>}
 		</div>
 	);
 }

@@ -1,4 +1,5 @@
 /* styles for pagination */
+
 .pagination_wrapper {
     min-width: 500px;
     display: flex;
@@ -8,6 +9,7 @@
 
 .numbers_wrapper {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -26,7 +28,7 @@
 }
 
 .prevNextBtn {
-    padding: 5px 15px;
+    padding: 5px 20px;
     color: white;
     background: rgba(232,224,207, 0.2);
     user-select: none;
@@ -35,3 +37,9 @@
 .prevNextBtn:active {
     transform: scale(0.98);
 }
+
+.prevNextBtn:disabled {
+    filter: brightness(.5);
+}
+
+/* styles for pagination end */

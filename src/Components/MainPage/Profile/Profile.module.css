@@ -1,4 +1,5 @@
 /* styles for profile page */
+
 .profile_page {
     width: 100%;
     height: 100%;
@@ -6,3 +7,5 @@
     color: white;
     font-size: 36px;
 }
+
+/* styles for profile page end */

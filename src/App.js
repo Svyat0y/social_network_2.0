@@ -11,7 +11,7 @@ const App = ({initialized, startInitialize, isAuth}) => {
 
 	useEffect(() => {
 		startInitialize()
-	}, [initialized])
+	}, [])
 
 	if (!initialized) {
 		return (

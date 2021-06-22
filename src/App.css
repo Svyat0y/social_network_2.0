@@ -1,4 +1,5 @@
 /* common styles for all app */
+
 .App {
   max-width: 1440px;
   min-height: 100vh;
@@ -23,3 +24,27 @@
   height: auto;
   border-left: 1px solid #A9A39A;
 }
+
+/* common styles for all app end */
+
+
+/* material ui button */
+
+.MuiButton-contained {
+  width: 60px;
+  height: 30px;
+}
+
+.MuiButton-contained.Mui-disabled {
+  background: rgba(224,224,224, 0.9) !important;
+}
+
+.MuiButton-contained.followed {
+  background: forestgreen !important;
+}
+
+.MuiButton-root {
+  text-transform: initial !important;
+}
+
+/* material ui button end */

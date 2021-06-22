@@ -21,11 +21,11 @@ export const authAPI = {
 	}
 }
 
-// export const followedAPI = {
-// 	follow(userId) {
-// 		return instance.post(`follow/${userId}`).then(response => response.data)
-// 	},
-// 	unfollow(userId) {
-// 		return instance.delete(`follow/${userId}`).then(response => response.data)
-// 	}
-// }
+export const subscribeAPI = {
+	follow(userId) {
+		return instance.post(`follow/${userId}`).then(response => response.data)
+	},
+	unfollow(userId) {
+		return instance.delete(`follow/${userId}`).then(response => response.data)
+	}
+}
