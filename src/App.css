@@ -20,9 +20,9 @@
 }
 
 .main_page {
-  width: 75%;
+  width: 80%;
   height: auto;
-  border-left: 1px solid #A9A39A;
+  border-left: 1px solid #8E8888;
 }
 
 /* common styles for all app end */
@@ -31,19 +31,23 @@
 /* material ui button */
 
 .MuiButton-contained {
-  width: 60px;
+  width: 80px;
   height: 30px;
+  color: white !important;
+  background: #8E8888 !important;
+  letter-spacing: 0.5px !important;
 }
 
-.MuiButton-contained.Mui-disabled {
-  background: rgba(224,224,224, 0.9) !important;
+#root .MuiButton-contained.Mui-disabled {
+  filter: brightness(0.8);
 }
 
-.MuiButton-contained.followed {
-  background: forestgreen !important;
+#root .MuiButton-contained.followed {
+  background: initial !important;
+  border: 1px solid #8E8888 !important;
 }
 
-.MuiButton-root {
+#root .MuiButton-root {
   text-transform: initial !important;
 }
 

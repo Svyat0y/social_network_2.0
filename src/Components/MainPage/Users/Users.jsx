@@ -21,11 +21,11 @@ const User = ({userName, userImg, userStatus, userId, followAccept, followed, un
 						?
 						<Button disabled={followingInProgress.some(id => id === userId)} className={followed ? "followed" : ""} variant="contained"
 								onClick={()=> unfollowAccept(userId)}
-						>unfollow</Button>
+						>Unfollow</Button>
 						:
 						<Button disabled={followingInProgress.some(id => id === userId)} variant="contained"
 								onClick={()=> followAccept(userId)}
-						>follow</Button>
+						>Follow</Button>
 				}
 
 			</div>
@@ -67,7 +67,6 @@ const Users = (props) => {
 const UsersContainer = (props) => {
 
 	useEffect(() => {
-		console.log("refresh")
 		props.requestUsers(props.currentPage, props.pageSize)
 	}, [])
 

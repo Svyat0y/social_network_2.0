@@ -1,6 +1,6 @@
 import React from "react";
 import {Redirect, Route} from "react-router-dom";
-import Profile from "./Profile/Profile";
+import ProfileContainer from "./Profile/ProfileContainer";
 import Music from "./Music/Music";
 import Messages from "./Messages/Messages";
 import Notifications from "./Notifications/Notifications";
@@ -11,7 +11,7 @@ const MainPage = () => {
 	return (
 		<div className="main_page">
 			<Route exact path="/" render={() => <Redirect to="/profile"/>} />
-			<Route path="/profile" render={() => <Profile/>} />
+			<Route path="/profile" render={() => <ProfileContainer/>} />
 			<Route path="/messages" render={() => <Messages/>} />
 			<Route path="/music" render={() => <Music/>} />
 			<Route path="/notifications" render={() => <Notifications/>} />
