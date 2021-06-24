@@ -8,15 +8,16 @@
 
 /* styles for profile */
 
-.profile_left_wrapper {
-    max-width: 300px;
-    height: auto;
-}
-
 .profile_wrapper {
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+}
+
+.profile_left_wrapper {
+    max-width: 300px;
     height: auto;
 }
 
@@ -61,11 +62,12 @@
 
 .info_box_title_about {
     font-size: 24px;
-    margin: 15px 0 5px;
+    margin: 15px 0 0;
 }
 
 .bio_wrapper .info_box_desc {
-    color: white;
+    margin-top: 5px;
+    color: lightgray;
     font-size: 18px;
     word-break: break-word;
 }
@@ -81,18 +83,135 @@
 }
 
 .social_link_icon {
-    color: #8E8888;
+    color: #E8E0CF;
     font-size: 28px !important;
 }
 
 .social_link_icon:hover {
-    color: #E8E0CF;
-}
-
-.social_link_icon:active {
-    transform: scale(0.90);
+    color: #8E8888;
+    transform: scale(0.95)
 }
 
 /* styles for profile end */
+
+
+/* styles for profile posts */
+
+.posts_wrapper {
+    padding-top: 50px;
+    width: 100%;
+    height: auto;
+}
+
+.postMessage_form {
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.postMessage_form textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 200px;
+    border-radius: 10px;
+    resize: vertical;
+    padding: 10px;
+    background: whitesmoke;
+}
+
+.postMessage_form button {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: all .1s ease;
+}
+
+.postMessage_form button:active {
+    transform: scale(0.99);
+}
+
+.postMessage_form button:hover {
+    background: #E8E0CF;
+}
+
+.postMessage_wrapper {
+    width: 100%;
+    margin: 25px auto 0;
+}
+
+.postMessage_box {
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    padding: 25px 0;
+    border-bottom: 1px solid #8E8888;
+}
+
+.postMessage_user {
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_name {
+    margin-top: 5px;
+    color: #E8E0CF;
+}
+
+.postMessage_img_Wrapper {
+    width: 75px;
+    height: 75px;
+}
+
+.postMessage_img_Wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.postMessage_message_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.postMessage_message_box p {
+    padding: 0 0 15px;
+    color: lightgray;
+}
+
+.likesCount_box {
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.likesCount_box span {
+    color: #E8E0CF;
+}
+
+.likeIcon {
+    color: #8E8888;
+    margin-right: 5px;
+}
+
+.likesCount_box:active .likeIcon {
+    color: #E8E0CF;
+}
+
+.likesCount_box:active {
+    transform: translateY(-1px);
+}
+
+/* styles for profile posts end */
 
 /* styles for profile page end */

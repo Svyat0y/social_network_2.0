@@ -88,10 +88,11 @@ img {
 
 p {
   margin: 0;
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
   color: #9E9898;
+  word-break: break-word;
 }
 h5 {
   font-size: 26px;

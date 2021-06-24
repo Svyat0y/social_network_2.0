@@ -52,15 +52,15 @@ const Profile = (props) => {
 				<h1 className={style.profile_name}>{fullName}</h1>
 				<div className={style.bio_wrapper}>
 
-					<span className={style.info_box_title}>Looking for a job: <span
-						className={style.info_box_desc}>{lookingForAJob ? "Yes" : "No"}</span></span>
+					<span className={style.info_box_title}>Looking for a job: <p
+						className={style.info_box_desc}>{lookingForAJob ? "Yes" : "No"}</p></span>
 
-					<span className={style.info_box_title}>Job description: <span
-						className={style.info_box_desc}>{lookingForAJobDescription}</span></span>
+					<span className={style.info_box_title}>Job description: <p
+						className={style.info_box_desc}>{lookingForAJobDescription}</p></span>
 
-					<span className={style.info_box_title_about}>About Me:</span>
+					<p className={style.info_box_title_about}>About Me:</p>
 
-					<span className={style.info_box_desc}>{aboutMe}</span>
+					<p className={style.info_box_desc}>{aboutMe}</p>
 
 				</div>
 			</div>

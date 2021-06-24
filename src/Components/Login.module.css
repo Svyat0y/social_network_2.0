@@ -46,6 +46,7 @@
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 10px;
+    background: whitesmoke;
 }
 
 .login_form label input[type="checkbox"],
@@ -66,8 +67,8 @@
     width: 80px;
     padding: 5px;
     border-radius: 5px;
-    background: white;
-    transition: all 0.2s ease;
+    background: whitesmoke;
+    transition: all 0.1s ease;
 }
 .login_form button:active {
     transform: scale(0.99);
