@@ -47,32 +47,32 @@
     align-items: flex-start;
 }
 
-.bio_wrapper .info_box_tittle {
+.bio_wrapper .info_box_title {
     font-size: 24px;
     margin-bottom: 10px;
     color: #E8E0CF;
 }
 
-.bio_wrapper .info_box_tittle:last-child {
+.bio_wrapper .info_box_title:last-child {
     margin: 15px 0 35px;
 }
 
 .bio_wrapper .info_box_desc {
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     word-break: break-word;
 }
 
 .social_links_wrapper {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
+}
+
+.social_links_wrapper a {
+    margin-right: 15px;
 }
 
 .social_link_icon {
     color: #8E8888;
-    margin: 0 8px;
     font-size: 28px !important;
 }
 

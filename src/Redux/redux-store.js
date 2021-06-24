@@ -5,12 +5,14 @@ import sideBarReducer from "./side-bar-reducer";
 import usersReducer from "./users-reducer";
 import authReducer from "./auth-reducer";
 import appReducer from "./app-reducer";
+import profileReducer from "./profile-reducer";
 
 const reducers = combineReducers({
 	sideBar: sideBarReducer,
 	usersPage: usersReducer,
 	auth: authReducer,
 	app: appReducer,
+	profilePage: profileReducer,
 	form: formReducer
 })
 
