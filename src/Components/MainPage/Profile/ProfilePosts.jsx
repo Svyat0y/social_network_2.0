@@ -1,22 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import style from "./Profile.module.css";
 import {Field, reduxForm} from "redux-form";
 
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
-const AddPostMessage = (props) => {
+const AddPostMessageForm = (props) => {
 
 	const {handleSubmit} = props
 
 	return (
 		<form onSubmit={handleSubmit} className={style.postMessage_form}>
-			<Field component={'textarea'} name='newPostMessage' placeholder='write a message'/>
+			<Field component={'textarea'} name={'newPostMessage'} placeholder={'write a message'}/>
 			<button>Add post</button>
 		</form>
 	)
 }
 
-const AddPostMessageReduxForm = reduxForm({form: 'postMessageForm'})(AddPostMessage)
+const AddPostMessageReduxForm = reduxForm({form: 'postMessageForm'})(AddPostMessageForm)
 
 
 const Post = (props) => {
@@ -45,11 +45,9 @@ const ProfilePosts = (props) => {
 
 	const {postData} = props
 
-	const post = postData.map(p => <Post key={p.id} {...p}/>)
+	const post = postData.map(p => <Post key={p.id} {...p}/>).reverse()
 
-	const addNewPosMessage = (values) => {
-		props.addPostMessage(values.newPostMessage)
-	}
+	const addNewPosMessage = (formValues) => props.addPostMessage(formValues.newPostMessage)
 
 	return (
 		<div className={style.posts_wrapper}>

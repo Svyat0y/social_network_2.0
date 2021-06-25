@@ -37,7 +37,8 @@
 
 .profile_info_wrapper {
     margin-left: 35px;
-    max-width: 750px;
+    width: 100%;
+    position: relative;
 }
 
 .profile_name {
@@ -92,19 +93,35 @@
     transform: scale(0.95)
 }
 
+.profile_sendMessage_btn {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    border-radius: 5px;
+    width: 100px;
+    height: 25px;
+}
+
+.profile_sendMessage_btn:hover {
+    background: #E8E0CF;
+}
+
+.profile_sendMessage_btn:active {
+    transform: scale(0.99);
+}
+
 /* styles for profile end */
 
 
 /* styles for profile posts */
 
 .posts_wrapper {
-    padding-top: 50px;
     width: 100%;
     height: auto;
 }
 
 .postMessage_form {
-    margin: 0 auto;
+    padding-bottom: 25px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -147,7 +164,7 @@
     height: auto;
     display: flex;
     justify-content: flex-start;
-    padding: 25px 0;
+    padding: 0 0 25px 0;
     border-bottom: 1px solid #8E8888;
 }
 
@@ -155,7 +172,7 @@
     margin-right: 25px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 

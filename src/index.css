@@ -57,6 +57,18 @@ html, body {
   background: url("assets/images/login_background.jpg") no-repeat fixed bottom center;
 }
 
+html::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 15px;
+}
+html::-webkit-scrollbar-thumb {
+  background: #5B555F;
+}
+
+html::-webkit-scrollbar-track {
+  background: #342A3A;
+}
+
 input, button, textarea {
   font-family: inherit;
 }

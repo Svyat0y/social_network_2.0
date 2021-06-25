@@ -1,4 +1,5 @@
 import {profileAPI} from "../api/api";
+import {reset} from "redux-form";
 
 const SET_PROFILE = "SET_PROFILE"
 const SET_POST = "SET_POST"
@@ -8,10 +9,10 @@ const initialState = {
 	postData: [
 		{
 			id: 0,
-			name: 'Dasha',
-			message: 'hi, how are u?',
-			likesCount: '1536',
-			img: 'https://wonder-day.com/wp-content/uploads/2020/03/Wonder-Day-Ava-105.jpg'
+			name: 'Vlad',
+			message: 'hi',
+			likesCount: '150',
+			img: 'https://i2.wp.com/andrey-eltsov.ru/wp-content/uploads/2017/09/DopNaAvu1.jpg'
 		},
 		{
 			id: 1,
@@ -22,11 +23,11 @@ const initialState = {
 		},
 		{
 			id: 2,
-			name: 'Vlad',
-			message: 'hi',
-			likesCount: '150',
-			img: 'https://i2.wp.com/andrey-eltsov.ru/wp-content/uploads/2017/09/DopNaAvu1.jpg'
-		}
+			name: 'Dasha',
+			message: 'hi, how are u?',
+			likesCount: '1536',
+			img: 'https://wonder-day.com/wp-content/uploads/2020/03/Wonder-Day-Ava-105.jpg'
+		},
 	]
 }
 
@@ -55,19 +56,22 @@ const profileReducer = (state = initialState, action) => {
 	}
 }
 
+// action creators
 export const setUserProfile = (profile) => ({type: SET_PROFILE, payload: profile})
 export const setPostMessage = (message) => ({type: SET_POST, payload: message})
 
 
-export const addPostMessage = (message) => (dispatch) => {
+// thunk creators
 
+// adding post on profile page
+export const addPostMessage = (message) => (dispatch) => {
 	dispatch(setPostMessage(message))
+	dispatch(reset('postMessageForm'))
 }
 
+// receive user profile data
 export const getUserProfile = (userId) => async (dispatch) => {
-
 	const data = await profileAPI.getProfile(userId)
-
 	dispatch(setUserProfile(data.data))
 }
 

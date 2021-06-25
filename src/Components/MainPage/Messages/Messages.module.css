@@ -1,0 +1,129 @@
+/* styles for messages page */
+
+.messages_wrapper {
+    margin: 25px;
+    border: 1px solid #8E8888;
+    border-radius: 10px;
+    max-width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* styles for dialogs users */
+
+.messages_users_block  {
+    width: 35%;
+    max-height: 100%;
+    overflow-y: auto;
+
+}
+
+.dialogsUser_wrapper {
+    display: flex;
+    height: auto;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.dialogsUser_img_wrapper {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    margin-right: 25px;
+}
+
+.dialogsUser_img_wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.dialogsUser_name {
+    color: #E8E0CF;
+    font-size: 20px;
+    width: 100%;
+}
+
+.active_dialog_user .dialogsUser_wrapper {
+    background: #5B555F;
+    border-radius: 10px;
+}
+
+/* styles for dialogs users end */
+
+
+/* styles for dialogs messages container */
+
+.dialogs_messages_block {
+    padding: 25px;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid #8E8888;
+}
+
+.dialogs_messages_container {
+    overflow-y: auto;
+    padding: 25px;
+}
+
+.dialogs_messages_container::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 10px;
+}
+.dialogs_messages_container::-webkit-scrollbar-thumb {
+    background: #5B555F;
+}
+
+.messages_box {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}
+
+.messages_box p {
+    max-width: 80%;
+    background: #5B555F;
+    padding: 15px;
+    border-radius: 10px;
+    color: lightgray;
+}
+
+.dialogs_messages_footer {
+    width: 100%;
+    height: auto;
+}
+
+.dialog_message_form textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    border-radius: 10px;
+    padding: 10px;
+    background: whitesmoke;
+}
+
+.dialog_message_form button {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.dialog_message_form button:hover {
+    background: #E8E0CF;
+}
+
+.dialog_message_form button:active {
+    transform: scale(0.99);
+}
+
+
+/* styles for dialogs messages container end */
+
+/* styles for messages page end */

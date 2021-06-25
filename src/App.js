@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import './App.css';
 import Login from "./Components/Login";
-import Header from "./Components/Header/Header";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 import Aside from "./Components/Aside/Aside";
 import MainPage from "./Components/MainPage/MainPage";
 import {connect} from "react-redux";
@@ -9,26 +9,15 @@ import {startInitialize} from "./Redux/app-reducer";
 
 const App = ({initialized, startInitialize, isAuth}) => {
 
-	useEffect(() => {
-		startInitialize()
-	}, [])
+	useEffect(() => {startInitialize()}, [])
 
-	if (!initialized) {
-		return (
-			<div>
-				loading
-			</div>
-		)
-	}
+	if (!initialized) return <div>loading</div>
 
-	if (!isAuth) {
-		return (
-			<Login/>
-		)
-	}
+	if (!isAuth) return <Login/>
+
 	return (
 		<div className="App">
-			<Header/>
+			<HeaderContainer/>
 			<main className="main_wrapper">
 				<Aside/>
 				<MainPage/>

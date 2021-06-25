@@ -5,13 +5,9 @@ import Users from "./Users";
 
 const UsersContainer = (props) => {
 
-	useEffect(() => {
-		props.requestUsers(props.currentPage, props.pageSize)
-	}, [])
+	useEffect(() => {props.requestUsers(props.currentPage, props.pageSize)}, [])
 
-	const onPageChanged = (currentPage) => {
-		props.requestUsers(currentPage, props.pageSize)
-	}
+	const onPageChanged = (currentPage) => props.requestUsers(currentPage, props.pageSize)
 
 	return (
 		<Users {...props} onPageChanged={onPageChanged}/>

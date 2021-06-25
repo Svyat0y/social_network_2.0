@@ -17,6 +17,7 @@
 
 .actionLogout_box {
     color: white;
+    cursor: pointer;
 }
 
 /* styles for header component end */

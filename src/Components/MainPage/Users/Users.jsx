@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Users.module.css";
-import Pagination from "../../Common/Pagination/Pagination";
+import Pagination from "../../Common/Pagination/Pagination";s
 import User from "./User";
 
 const Users = (props) => {

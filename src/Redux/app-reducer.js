@@ -9,18 +9,19 @@ const initialState = {
 const appReducer = (state = initialState, action) => {
 	switch (action.type) {
 
-		case INITIALIZED_SUCCESS: {
-			return {
-				...state, initialized: true
-			}
-		}
+		case INITIALIZED_SUCCESS:
+			return {...state, initialized: true}
 
 		default:
 			return state
 	}
 }
 
+//action creators
 export const initializeSuccess = () => ({type: INITIALIZED_SUCCESS})
+
+
+//thunk creators
 
 //initialization application
 export const startInitialize = () => (dispatch) => {

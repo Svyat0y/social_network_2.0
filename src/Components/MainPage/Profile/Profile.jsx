@@ -9,6 +9,7 @@ import {VkIcon} from "../../../assets/images/svg";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkIcon from "@material-ui/icons/Link";
+import images from "../../../assets/images/images";
 
 const Profile = (props) => {
 
@@ -19,7 +20,7 @@ const Profile = (props) => {
 
 			<div className={style.profile_left_wrapper}>
 				<div className={style.profile_img_wrapper}>
-					<img src={photos.large} alt="profile_ava"/>
+					<img src={photos.large || images.imgProfileNotFound} alt="profile_ava"/>
 				</div>
 				<div className={style.social_links_wrapper}>
 					{contacts.facebook && <a title="Facebook" href={contacts.facebook} target="_blank">
@@ -53,7 +54,7 @@ const Profile = (props) => {
 				<div className={style.bio_wrapper}>
 
 					<span className={style.info_box_title}>Looking for a job: <p
-						className={style.info_box_desc}>{lookingForAJob ? "Yes" : "No"}</p></span>
+						className={style.info_box_desc}>{lookingForAJob && "Yes" || "No"}</p></span>
 
 					<span className={style.info_box_title}>Job description: <p
 						className={style.info_box_desc}>{lookingForAJobDescription}</p></span>
@@ -61,6 +62,8 @@ const Profile = (props) => {
 					<p className={style.info_box_title_about}>About Me:</p>
 
 					<p className={style.info_box_desc}>{aboutMe}</p>
+
+					{/*<button className={style.profile_sendMessage_btn}>Send message</button>*/}
 
 				</div>
 			</div>

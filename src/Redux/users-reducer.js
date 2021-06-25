@@ -64,6 +64,8 @@ const setFollowingInProgress = (isFollowing, userId) => ({type: SET_FOLLOWING_IN
 
 
 //thunk creators
+
+// receive users list
 export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
 	dispatch(setCurrentPage(currentPage))
 	dispatch(setIsFetching(true))
@@ -75,6 +77,7 @@ export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
 	dispatch(setUsers(data.items))
 }
 
+// subscribe
 export const followAccept = (userId) => async (dispatch) => {
 
 	dispatch(setFollowingInProgress(true, userId))
@@ -87,6 +90,7 @@ export const followAccept = (userId) => async (dispatch) => {
 	}
 }
 
+// unsubscribe
 export const unfollowAccept = (userId) => async (dispatch) => {
 
 	dispatch(setFollowingInProgress(true, userId))

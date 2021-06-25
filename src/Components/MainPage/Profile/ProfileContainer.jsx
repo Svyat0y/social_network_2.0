@@ -11,15 +11,13 @@ const ProfileContainer = (props) => {
 
 	const {profile, postData, addPostMessage} = props
 
+	useEffect(() => {refreshProfile()}, [props.match.params.userId])
+
 	const refreshProfile = () => {
 		let userId = props.match.params.userId
 		if (!userId) userId = "16553"
 		props.getUserProfile(userId)
 	}
-
-	useEffect(() => {
-		refreshProfile()
-	}, [props.match.params.userId])
 
 	if (!profile) return <div>loooooooooooooooooading</div>
 

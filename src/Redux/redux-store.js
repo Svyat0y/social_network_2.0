@@ -6,6 +6,7 @@ import usersReducer from "./users-reducer";
 import authReducer from "./auth-reducer";
 import appReducer from "./app-reducer";
 import profileReducer from "./profile-reducer";
+import messagesReducer from "./messages-reducer";
 
 const reducers = combineReducers({
 	sideBar: sideBarReducer,
@@ -13,6 +14,7 @@ const reducers = combineReducers({
 	auth: authReducer,
 	app: appReducer,
 	profilePage: profileReducer,
+	messagesPage: messagesReducer,
 	form: formReducer
 })
 
