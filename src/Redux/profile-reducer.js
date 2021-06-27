@@ -3,9 +3,11 @@ import {reset} from "redux-form";
 
 const SET_PROFILE = "SET_PROFILE"
 const SET_POST = "SET_POST"
+const SET_STATUS = "SET_STATUS"
 
 const initialState = {
 	profile: null,
+	status: 'suaaa',
 	postData: [
 		{
 			id: 0,
@@ -37,6 +39,9 @@ const profileReducer = (state = initialState, action) => {
 		case SET_PROFILE:
 			return {...state, profile: action.payload}
 
+		case SET_STATUS:
+			return {...state, status: action.payload}
+
 		case SET_POST:
 			if (action.payload && action.payload.replace(/\s/g, "")) {
 				return {
@@ -59,6 +64,7 @@ const profileReducer = (state = initialState, action) => {
 // action creators
 export const setUserProfile = (profile) => ({type: SET_PROFILE, payload: profile})
 export const setPostMessage = (message) => ({type: SET_POST, payload: message})
+export const setUserStatus = (status) => ({type: SET_STATUS, payload: status})
 
 
 // thunk creators
@@ -73,6 +79,16 @@ export const addPostMessage = (message) => (dispatch) => {
 export const getUserProfile = (userId) => async (dispatch) => {
 	const data = await profileAPI.getProfile(userId)
 	dispatch(setUserProfile(data.data))
+}
+
+export const getUserStatus = (userId) => async (dispatch) => {
+	const data = await profileAPI.getStatus(userId)
+	dispatch(setUserStatus(data))
+}
+
+export const updateUserStatus = (status) => async (dispatch) => {
+	const data = await profileAPI.updateUserStatus(status)
+	if(data.resultCode === 0) dispatch(setUserStatus(status))
 }
 
 

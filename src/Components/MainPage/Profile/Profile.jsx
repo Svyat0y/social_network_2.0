@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import style from "./Profile.module.css";
 
 //import icons from material ui
@@ -10,9 +10,11 @@ import YouTubeIcon from "@material-ui/icons/YouTube";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import LinkIcon from "@material-ui/icons/Link";
 import images from "../../../assets/images/images";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const Profile = (props) => {
 
+	const {status, updateUserStatus} = props
 	const {aboutMe, fullName, lookingForAJob, lookingForAJobDescription, photos, contacts} = props.profile
 
 	return (
@@ -51,6 +53,9 @@ const Profile = (props) => {
 
 			<div className={style.profile_info_wrapper}>
 				<h1 className={style.profile_name}>{fullName}</h1>
+
+				<ProfileStatusWithHooks status={status} updateUserStatus={updateUserStatus} />
+
 				<div className={style.bio_wrapper}>
 
 					<span className={style.info_box_title}>Looking for a job: <p

@@ -12,7 +12,14 @@ const instance = axios.create({
 export const profileAPI = {
 	getProfile(userId) {
 		return instance.get(`profile/${userId}`)
+	},
+	getStatus(userId) {
+		return instance.get(`profile/status/${userId}`).then(response => response.data)
+	},
+	updateUserStatus(status) {
+		return instance.put(`profile/status`, {status}).then(response => response.data)
 	}
+
 }
 
 export const usersAPI = {
