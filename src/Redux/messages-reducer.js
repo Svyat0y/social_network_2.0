@@ -43,10 +43,13 @@ const messagesReducer = (state = initialState, action) => {
 	switch (action.type) {
 
 		case SEND_MY_MESSAGE_TEXT:
+			if(action.payload && action.payload.replace(/\s/g, "")) {
 			return {...state, dialogsMessages: [...state.dialogsMessages, {
 				id: 3,
 				message: action.payload
 				}]}
+			}
+			return state
 
 		default:
 			return state

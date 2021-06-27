@@ -91,5 +91,16 @@ export const updateUserStatus = (status) => async (dispatch) => {
 	if(data.resultCode === 0) dispatch(setUserStatus(status))
 }
 
+export const updateBioProfile = (profile) => async (dispatch, getState) => {
+	const userid = getState().auth.id
+	const data = profileAPI.updateBioProfile(profile)
+	if(data.resultCode === 0) dispatch(getUserProfile(userid))
+}
+
+export const refreshProfileInSettings = () => (dispatch, getState) => {
+	const userid = getState().auth.id
+	dispatch(getUserProfile(userid))
+}
+
 
 export default profileReducer;

@@ -18,6 +18,9 @@ export const profileAPI = {
 	},
 	updateUserStatus(status) {
 		return instance.put(`profile/status`, {status}).then(response => response.data)
+	},
+	updateBioProfile(profile) {
+		return instance.put(`profile`, profile).then(response => response.data)
 	}
 
 }

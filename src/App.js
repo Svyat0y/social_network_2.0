@@ -6,12 +6,13 @@ import Aside from "./Components/Aside/Aside";
 import MainPage from "./Components/MainPage/MainPage";
 import {connect} from "react-redux";
 import {startInitialize} from "./Redux/app-reducer";
+import Preloader from "./Components/Common/Preloader/Preloader";
 
 const App = ({initialized, startInitialize, isAuth}) => {
 
 	useEffect(() => {startInitialize()}, [])
 
-	if (!initialized) return <div>loading</div>
+	if (!initialized) return <Preloader />
 
 	if (!isAuth) return <Login/>
 
@@ -31,5 +32,4 @@ const mapStateToProps = (state) => ({
 	isAuth: state.auth.isAuth
 })
 
-//connected App to store
 export default connect(mapStateToProps, {startInitialize})(App);

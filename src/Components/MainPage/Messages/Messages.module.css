@@ -1,6 +1,7 @@
 /* styles for messages page */
 
 .messages_wrapper {
+    overflow: hidden;
     margin: 25px;
     border: 1px solid #8E8888;
     border-radius: 10px;

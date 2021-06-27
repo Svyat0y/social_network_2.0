@@ -8,9 +8,7 @@ const ProfileStatusWithHooks = (props) => {
 	const [editMode, setEditMode] = useState(false)
 	const [activeStatus, setActiveStatus] = useState(status)
 
-	useEffect(() => {
-		setActiveStatus(status)
-	},[status])
+	useEffect(() => {setActiveStatus(status)},[status])
 
 	const activatedEditMode = () => {
 		setEditMode(true)
@@ -28,7 +26,6 @@ const ProfileStatusWithHooks = (props) => {
 	const handleFocus = (e) => {
 		e.target.select()
 	}
-
 
 	return (
 		<div className={style.profile_status_wrapper}>

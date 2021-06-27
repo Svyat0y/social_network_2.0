@@ -53,10 +53,15 @@
 
 .profile_status_wrapper input {
     padding: 5px;
+    background: #443F49;
+    border-radius: 5px;
+    color: whitesmoke;
+    width: 90%;
 }
 
 .profile_status_wrapper span {
-    color: lightgray;
+    color: whitesmoke;
+    padding: 5px 5px 5px 0;
 }
 
 .bio_wrapper {

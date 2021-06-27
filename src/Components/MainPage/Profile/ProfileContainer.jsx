@@ -6,6 +6,7 @@ import {withRouter} from "react-router-dom"
 import {addPostMessage, getUserProfile, getUserStatus, updateUserStatus} from "../../../Redux/profile-reducer";
 import Profile from "./Profile";
 import ProfilePosts from "./ProfilePosts";
+import Preloader from "../../Common/Preloader/Preloader";
 
 const ProfileContainer = (props) => {
 
@@ -20,7 +21,7 @@ const ProfileContainer = (props) => {
 		getUserStatus(userId)
 	}
 
-	if (!profile) return <div>loooooooooooooooooading</div>
+	if (!profile) return <Preloader />
 
 	return (
 		<div className={style.profileContainer_wrapper}>

@@ -1,0 +1,17 @@
+.form_control.error textarea,
+.form_control.error input {
+    /*border: 1px solid red;*/
+}
+
+.form_control {
+    position: relative;
+}
+
+.form_control .errorMessage {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 5px;
+    position: absolute;
+    left: 0;
+    top: -17px;
+}

@@ -1,0 +1,99 @@
+.settings_wrapper {
+    margin: 35px 25px 50px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.upload_Photo_wrapper {
+    padding: 10px;
+    border: 1px solid #8E8888;
+    border-radius: 5px;
+}
+
+.upload_Photo_wrapper span {
+    display: inline-block;
+    width: 35%;
+    color: #E8E0CF;
+}
+.upload_Photo_wrapper input[type="file"] {
+    background: #443F49;
+    color: whitesmoke;
+}
+
+.settings_form {
+    border: 1px solid #8E8888;
+    border-radius: 5px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.settings_box_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.settings_box_wrapper span {
+    display: inline-block;
+    width: 35%;
+    color: #E8E0CF;
+}
+
+.settings_box_wrapper .input_info_wr {
+    display: inline-block;
+    width: 65%;
+}
+
+.settings_box_wrapper input {
+    width: 100%;
+    border-radius: 5px;
+    background: #9E9898;
+    padding: 5px;
+    color: #443F49;
+    text-indent: 5px;
+}
+
+.settings_box_wrapper textarea {
+    background: #9E9898;
+    width: 100%;
+    resize: vertical;
+    min-height: 60px;
+    max-height: 140px;
+    border-radius: 5px;
+    color: #443F49;
+    padding: 5px;
+    text-indent: 5px;
+}
+
+.settings_box_wrapper input[type=checkbox] {
+    width: 16px;
+    height: 16px;
+}
+
+.settings_form button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -50px;
+}
+
+.settings_form button:hover {
+    background: #E8E0CF;
+}
+
+.settings_form button:active {
+    transform: scale(0.99);
+}
+
+.contacts_header {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 10px 0 15px;
+}

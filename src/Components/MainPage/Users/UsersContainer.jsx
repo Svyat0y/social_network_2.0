@@ -5,9 +5,11 @@ import Users from "./Users";
 
 const UsersContainer = (props) => {
 
-	useEffect(() => {props.requestUsers(props.currentPage, props.pageSize)}, [])
+	const {currentPage, pageSize} = props
 
-	const onPageChanged = (currentPage) => props.requestUsers(currentPage, props.pageSize)
+	useEffect(() => {props.requestUsers(currentPage, pageSize)}, [])
+
+	const onPageChanged = (currentPage) => props.requestUsers(currentPage, pageSize)
 
 	return (
 		<Users {...props} onPageChanged={onPageChanged}/>
@@ -19,7 +21,8 @@ const mapStateToProps = (state) => ({
 	currentPage: state.usersPage.currentPage,
 	pageSize: state.usersPage.pageSize,
 	totalCount: state.usersPage.totalCount,
-	followingInProgress: state.usersPage.followingInProgress
+	followingInProgress: state.usersPage.followingInProgress,
+	isFetching: state.usersPage.isFetching
 })
 
 export default connect(mapStateToProps, {requestUsers, followAccept, unfollowAccept})(UsersContainer)

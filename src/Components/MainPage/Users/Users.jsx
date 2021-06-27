@@ -2,10 +2,11 @@ import React from "react";
 import style from "./Users.module.css";
 import Pagination from "../../Common/Pagination/Pagination";
 import User from "./User";
+import Preloader from "../../Common/Preloader/Preloader";
 
 const Users = (props) => {
 
-	const {users, totalCount, pageSize, currentPage, onPageChanged, followAccept, unfollowAccept, followingInProgress} = props
+	const {users, totalCount, pageSize, currentPage, onPageChanged, followAccept, unfollowAccept, followingInProgress, isFetching} = props
 
 	const user = users.map(u => <User
 		key={u.id}
@@ -21,9 +22,11 @@ const Users = (props) => {
 	return (
 		<>
 			<Pagination totalCount={totalCount} pageSize={pageSize} currentPage={currentPage} onPageChanged={onPageChanged}/>
-			<div className={style.users_wrapper}>
-				{user}
-			</div>
+			{isFetching
+			? <Preloader />
+			: <div className={style.users_wrapper}>
+					{user}
+				</div>}
 		</>
 	);
 }
