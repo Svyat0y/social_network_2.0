@@ -1,0 +1,2 @@
+(this["webpackJsonpsocial_network_2.0"]=this["webpackJsonpsocial_network_2.0"]||[]).push([[9],{339:function(t,i,n){"use strict";n.r(i);n(0);var s=n(1);i.default=function(t){return Object(s.jsx)("div",{children:"notifications"})}}}]);
+//# sourceMappingURL=9.1694c2d2.chunk.js.map
