@@ -10,7 +10,7 @@ const User = ({userName, userImg, userStatus, userId, followAccept, followed, un
 	return (
 		<div className={style.user_block_wrapper}>
 			<div className={style.user_box_left}>
-				<NavLink to={'/profile/' + userId} className={style.img_wrapper}>
+				<NavLink to={"/profile/" + userId} className={style.img_wrapper}>
 					<img src={userImg || images.imgAvatarNotFound} alt="userAvatar"/>
 				</NavLink>
 				{
@@ -31,7 +31,7 @@ const User = ({userName, userImg, userStatus, userId, followAccept, followed, un
 				<span className={style.status}><span className={style.name}>Status: </span>{userStatus}</span>
 			</div>
 		</div>
-	)
+	);
 }
 
-export default User
+export default User;

@@ -11,9 +11,7 @@ const UsersContainer = (props) => {
 
 	const onPageChanged = (currentPage) => props.requestUsers(currentPage, pageSize)
 
-	return (
-		<Users {...props} onPageChanged={onPageChanged}/>
-	)
+	return <Users {...props} onPageChanged={onPageChanged}/>
 }
 
 const mapStateToProps = (state) => ({
@@ -25,4 +23,4 @@ const mapStateToProps = (state) => ({
 	isFetching: state.usersPage.isFetching
 })
 
-export default connect(mapStateToProps, {requestUsers, followAccept, unfollowAccept})(UsersContainer)
+export default connect(mapStateToProps, {requestUsers, followAccept, unfollowAccept})(UsersContainer);

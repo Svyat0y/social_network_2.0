@@ -1,23 +1,7 @@
-import React, {useEffect} from "react";
+import React from "react";
 import style from "./Profile.module.css";
-import {Field, reduxForm} from "redux-form";
-
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-
-const AddPostMessageForm = (props) => {
-
-	const {handleSubmit} = props
-
-	return (
-		<form onSubmit={handleSubmit} className={style.postMessage_form}>
-			<Field component={'textarea'} name={'newPostMessage'} placeholder={'write a message'}/>
-			<button>Add post</button>
-		</form>
-	)
-}
-
-const AddPostMessageReduxForm = reduxForm({form: 'postMessageForm'})(AddPostMessageForm)
-
+import AddPostMessageReduxForm from "./AddPostMessageForm";
 
 const Post = (props) => {
 
@@ -38,7 +22,7 @@ const Post = (props) => {
 				</div>
 			</div>
 		</div>
-	)
+	);
 }
 
 const ProfilePosts = (props) => {
@@ -54,7 +38,7 @@ const ProfilePosts = (props) => {
 			<AddPostMessageReduxForm onSubmit={addNewPosMessage}/>
 			{post}
 		</div>
-	)
+	);
 }
 
-export default ProfilePosts
+export default ProfilePosts;

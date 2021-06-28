@@ -31,7 +31,7 @@ const DialogsMessages = (props) => {
 				<AddDialogMessageFormRedux onSubmit={addNewDialogMessage}/>
 			</div>
 		</div>
-	)
+	);
 }
 
-export default DialogsMessages
+export default DialogsMessages;

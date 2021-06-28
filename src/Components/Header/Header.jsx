@@ -7,9 +7,7 @@ const HeaderContainer = (props) => {
 
 	const {logout} = props
 
-	const getLogout = () => {
-		logout()
-	}
+	const getLogout = () => logout()
 
 	return (
 		<header className={style.header}>

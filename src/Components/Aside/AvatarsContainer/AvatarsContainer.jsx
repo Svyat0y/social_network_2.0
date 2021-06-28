@@ -25,12 +25,10 @@ const AvatarsContainer = ({avatarsData}) => {
 				{avatarItem}
 			</div>
 		</div>
-	)
+	);
 }
 
-const mapStateToProps = (state) => ({
-	avatarsData: state.sideBar.avatarsData
-})
+const mapStateToProps = state => ({avatarsData: state.sideBar.avatarsData})
 
 // connected avatars container to store
-export default connect(mapStateToProps, null)(AvatarsContainer)
+export default connect(mapStateToProps, null)(AvatarsContainer);

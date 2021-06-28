@@ -57,9 +57,3 @@ export const securityAPI = {
 		return instance.get(`security/get-captcha-url`).then(response => response.data)
 	}
 }
-
-// export const messagesAPI = {
-// 	sendMessage(userId, body) {
-// 		return instance.post(`dialogs/${userId}/messages`, {body}).then(response => response.data)
-// 	}
-// }

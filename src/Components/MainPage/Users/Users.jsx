@@ -31,4 +31,4 @@ const Users = (props) => {
 	);
 }
 
-export default Users
+export default Users;

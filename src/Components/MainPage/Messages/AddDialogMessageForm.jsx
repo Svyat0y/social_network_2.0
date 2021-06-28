@@ -1,6 +1,6 @@
+import React from "react";
 import style from "./Messages.module.css";
 import {Field, reduxForm} from "redux-form";
-import React from "react";
 
 const AddDialogMessageForm = (props) => {
 
@@ -8,12 +8,12 @@ const AddDialogMessageForm = (props) => {
 
 	return (
 		<form onSubmit={handleSubmit} className={style.dialog_message_form}>
-			<Field name={'newDialogMessage'} component={'textarea'}/>
+			<Field name={"newDialogMessage"} component={"textarea"}/>
 			<button>Send message</button>
 		</form>
 	)
 }
 
-const AddDialogMessageFormRedux = reduxForm({form: 'addDialogMessageForm'})(AddDialogMessageForm)
+const AddDialogMessageFormRedux = reduxForm({form: "addDialogMessageForm"})(AddDialogMessageForm);
 
-export default AddDialogMessageFormRedux
+export default AddDialogMessageFormRedux;

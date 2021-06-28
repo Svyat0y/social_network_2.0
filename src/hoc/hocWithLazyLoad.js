@@ -6,5 +6,5 @@ export const hocWithLazyLoad = (Component) => {
 		<React.Suspense fallback={<Preloader />}>
 			<Component {...props} />
 		</React.Suspense>
-	)
+	);
 }

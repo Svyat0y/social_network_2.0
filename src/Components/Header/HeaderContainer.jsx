@@ -5,9 +5,7 @@ import {logout} from "../../Redux/auth-reducer";
 
 const HeaderContainer = (props) => {
 
-	return (
-		<Header {...props}/>
-	);
+	return <Header {...props}/>
 }
 
 export default connect(null, {logout})(HeaderContainer);

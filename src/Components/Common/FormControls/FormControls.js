@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./FormControl.module.css"
+import style from "./FormControl.module.css";
 
 
 export const Element = Element => ({input, meta, ...props}) => {
@@ -10,4 +10,4 @@ export const Element = Element => ({input, meta, ...props}) => {
 			<Element {...input} {...props} />
 		</div>
 	)
-}
+};

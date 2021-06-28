@@ -12,8 +12,8 @@ export const VkIcon = (props) => {
 		<SvgIcon {...props}>
 			{svgImages.pathOfVkIcon}
 		</SvgIcon>
-	);
+	)
 }
 
 
-export default svgImages
+export default svgImages;

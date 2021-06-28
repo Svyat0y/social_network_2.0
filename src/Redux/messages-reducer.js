@@ -1,6 +1,6 @@
 import {reset} from "redux-form";
 
-const SEND_MY_MESSAGE_TEXT = 'SEND_MY_MESSAGE_TEXT'
+const SEND_MY_MESSAGE_TEXT = "SEND_MY_MESSAGE_TEXT"
 
 
 const initialState = {
@@ -65,7 +65,7 @@ export const sendMyMessage = (body) => ({type: SEND_MY_MESSAGE_TEXT, payload: bo
 // send message in dialogs
 export const sendMessage = (userId, body) => (dispatch) => {
 	dispatch(sendMyMessage(body))
-	dispatch(reset('addDialogMessageForm'))
+	dispatch(reset("addDialogMessageForm"))
 }
 
-export default messagesReducer
+export default messagesReducer;

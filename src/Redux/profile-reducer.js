@@ -7,7 +7,7 @@ const SET_STATUS = "SET_STATUS"
 
 const initialState = {
 	profile: null,
-	status: 'suaaa',
+	status: null,
 	postData: [
 		{
 			id: 0,
@@ -47,10 +47,10 @@ const profileReducer = (state = initialState, action) => {
 				return {
 					...state, postData: [...state.postData, {
 						id: 3,
-						name: 'Dasha',
+						name: "Dasha",
 						message: action.payload,
 						likesCount: 0,
-						img: 'https://wonder-day.com/wp-content/uploads/2020/03/Wonder-Day-Ava-105.jpg'
+						img: "https://wonder-day.com/wp-content/uploads/2020/03/Wonder-Day-Ava-105.jpg"
 					}]
 				}
 			}
@@ -72,7 +72,7 @@ export const setUserStatus = (status) => ({type: SET_STATUS, payload: status})
 // adding post on profile page
 export const addPostMessage = (message) => (dispatch) => {
 	dispatch(setPostMessage(message))
-	dispatch(reset('postMessageForm'))
+	dispatch(reset("postMessageForm"))
 }
 
 // receive user profile data

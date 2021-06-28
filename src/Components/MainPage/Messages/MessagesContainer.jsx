@@ -30,4 +30,4 @@ const mapStateToProps = (state) => ({
 export default compose(
 	connect(mapStateToProps, {sendMessage}),
 	withRouter
-)(MessagesContainer)
+)(MessagesContainer);

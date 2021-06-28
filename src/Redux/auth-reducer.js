@@ -1,8 +1,8 @@
 import {authAPI, securityAPI} from "../api/api";
 
-const SET_USER_DATA = 'SET_USER_DATA'
-const SET_CAPTCHA = 'SET_CAPTCHA'
-const SET_OWNER = 'SET_OWNER'
+const SET_USER_DATA = "SET_USER_DATA"
+const SET_CAPTCHA = "SET_CAPTCHA"
+const SET_OWNER = "SET_OWNER"
 
 let initialState = {
 	id: null,

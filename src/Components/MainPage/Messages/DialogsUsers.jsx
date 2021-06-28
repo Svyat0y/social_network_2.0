@@ -7,7 +7,7 @@ const DialogsUser = (props) => {
 	const {id, userName, userImg} = props
 
 	return (
-		<NavLink to={'/messages/' + id} activeClassName={style.active_dialog_user}>
+		<NavLink to={"/messages/" + id} activeClassName={style.active_dialog_user}>
 			<div className={style.dialogsUser_wrapper}>
 				<div className={style.dialogsUser_img_wrapper}>
 					<img src={userImg} alt="user_avatar"/>
@@ -15,7 +15,7 @@ const DialogsUser = (props) => {
 				<span className={style.dialogsUser_name}>{userName}</span>
 			</div>
 		</NavLink>
-	)
+	);
 }
 
 const DialogsUsers = (props) => {
@@ -28,7 +28,7 @@ const DialogsUsers = (props) => {
 		<>
 			{dialogsUser}
 		</>
-	)
+	);
 }
 
-export default DialogsUsers
+export default DialogsUsers;
