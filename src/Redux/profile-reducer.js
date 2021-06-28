@@ -4,10 +4,13 @@ import {reset} from "redux-form";
 const SET_PROFILE = "SET_PROFILE"
 const SET_POST = "SET_POST"
 const SET_STATUS = "SET_STATUS"
+const SET_UPDATE_BIO_SUCCESS = "SET_UPDATE_BIO_SUCCESS"
+const SET_UPLOADED_PHOTO = "SET_UPLOADED_PHOTO"
 
 const initialState = {
 	profile: null,
 	status: null,
+	updatingBioSuccess: "",
 	postData: [
 		{
 			id: 0,
@@ -42,6 +45,12 @@ const profileReducer = (state = initialState, action) => {
 		case SET_STATUS:
 			return {...state, status: action.payload}
 
+		case SET_UPDATE_BIO_SUCCESS:
+			return {...state, updatingBioSuccess: action.payload}
+
+		case SET_UPLOADED_PHOTO:
+			return {...state, profile: {...state.profile, photos: action.payload}}
+
 		case SET_POST:
 			if (action.payload && action.payload.replace(/\s/g, "")) {
 				return {
@@ -65,6 +74,8 @@ const profileReducer = (state = initialState, action) => {
 export const setUserProfile = (profile) => ({type: SET_PROFILE, payload: profile})
 export const setPostMessage = (message) => ({type: SET_POST, payload: message})
 export const setUserStatus = (status) => ({type: SET_STATUS, payload: status})
+export const setUpdateBioSuccess = (successStatus) => ({type: SET_UPDATE_BIO_SUCCESS, payload: successStatus})
+export const setUploadedPhoto = (photos) => ({type: SET_UPLOADED_PHOTO, payload: photos})
 
 
 // thunk creators
@@ -93,8 +104,21 @@ export const updateUserStatus = (status) => async (dispatch) => {
 
 export const updateBioProfile = (profile) => async (dispatch, getState) => {
 	const userid = getState().auth.id
-	const data = profileAPI.updateBioProfile(profile)
-	if(data.resultCode === 0) dispatch(getUserProfile(userid))
+	let data = await profileAPI.updateBioProfile(profile)
+	if(data.resultCode === 0) {
+		dispatch(getUserProfile(userid))
+		dispatch(setUpdateBioSuccess("updating was successfully!"))
+	}
+}
+
+export const savePhoto = (photo) => async (dispatch) => {
+	const data = await profileAPI.savePhoto(photo)
+	dispatch(setUploadedPhoto(data.data.photos))
+	dispatch(setUpdateBioSuccess("updating was successfully!"))
+}
+
+export const updateWasSuccessfully = (successStatus) => (dispatch) => {
+		dispatch(setUpdateBioSuccess(successStatus))
 }
 
 export const refreshProfileInSettings = () => (dispatch, getState) => {

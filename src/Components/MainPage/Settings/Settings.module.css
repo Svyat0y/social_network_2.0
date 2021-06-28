@@ -33,7 +33,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
 }
 
 .settings_box_wrapper span {
@@ -77,8 +77,7 @@
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    margin-top: 10px;
-    position: absolute;
+    position: relative;
     left: 0;
     bottom: -50px;
 }
@@ -95,5 +94,13 @@
     text-align: center;
     display: block;
     width: 100%;
-    margin: 10px 0 15px;
+    margin: 0 0 10px;
+}
+
+.updating_success {
+    color: green;
+    font-size: 18px;
+    position: absolute;
+    bottom: -42px;
+    left: 120px;
 }

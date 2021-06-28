@@ -4,15 +4,15 @@ import SettingsFormRedux from "./SettingsForm";
 
 const Settings = (props) => {
 
-	const {profile, saveSettingsForm} = props
+	const {profile, saveSettingsForm, updatingBioSuccess, uploadPhoto} = props
 
 	return (
 		<div className={style.settings_wrapper}>
 			<div className={style.upload_Photo_wrapper}>
 				<span>Upload your photo:</span>
-				<input type="file"/>
+				<input onChange={uploadPhoto} type="file"/>
 			</div>
-			<SettingsFormRedux onSubmit={saveSettingsForm} initialValues={profile} profile={profile}/>
+			<SettingsFormRedux onSubmit={saveSettingsForm} initialValues={profile} profile={profile} updatingBioSuccess={updatingBioSuccess}/>
 		</div>
 	);
 }

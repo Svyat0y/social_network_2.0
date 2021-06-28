@@ -10,7 +10,7 @@ const maxLength300 = maxLengthCreator(300)
 
 const SettingsForm = (props) => {
 
-	const {handleSubmit, profile} = props
+	const {handleSubmit, profile, updatingBioSuccess} = props
 
 	return (
 		<form onSubmit={handleSubmit} className={style.settings_form}>
@@ -54,6 +54,7 @@ const SettingsForm = (props) => {
 				</div>
 			})}
 			<button>Save changes</button>
+			<span className={style.updating_success}>{updatingBioSuccess}</span>
 		</form>
 	);
 }
