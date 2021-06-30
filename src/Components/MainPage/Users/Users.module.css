@@ -14,13 +14,13 @@
 .user_block_wrapper {
     width: 90%;
     height: auto;
-    /*border-bottom: 1px solid #8E8888;*/
+    border: 1px solid #5b555f;
     border-radius: 10px;
     display: flex;
     justify-content: flex-start;
     padding: 25px 25px;
     margin-bottom: 25px;
-    background: #5B555F;
+    backdrop-filter: blur(25px) brightness(85%);
 }
 
 .user_box_left {

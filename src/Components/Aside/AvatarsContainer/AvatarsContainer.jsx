@@ -1,6 +1,7 @@
 import style from "../Aside.module.css";
 import {connect} from "react-redux";
 import React from "react";
+import {getAvatars} from "../../../Redux/selectors/side-bar-selectors";
 
 const AvatarItem = ({avatarName, avatarImg}) => {
 	return (
@@ -28,7 +29,7 @@ const AvatarsContainer = ({avatarsData}) => {
 	);
 }
 
-const mapStateToProps = state => ({avatarsData: state.sideBar.avatarsData})
+const mapStateToProps = state => ({avatarsData: getAvatars(state)})
 
 // connected avatars container to store
 export default connect(mapStateToProps, null)(AvatarsContainer);

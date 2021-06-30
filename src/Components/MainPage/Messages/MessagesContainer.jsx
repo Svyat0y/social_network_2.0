@@ -6,6 +6,7 @@ import DialogsMessages from "./DialogsMessages";
 import {sendMessage} from "../../../Redux/messages-reducer";
 import {compose} from "redux";
 import {withRouter} from "react-router-dom";
+import {getDialogsMessages, getUsersWithDialogs} from "../../../Redux/selectors/messages-selectors";
 
 const MessagesContainer = (props) => {
 
@@ -23,8 +24,8 @@ const MessagesContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-	usersWithDialogs: state.messagesPage.usersWithDialogs,
-	dialogsMessages: state.messagesPage.dialogsMessages,
+	usersWithDialogs: getUsersWithDialogs(state),
+	dialogsMessages: getDialogsMessages(state)
 })
 
 export default compose(

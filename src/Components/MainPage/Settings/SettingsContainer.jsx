@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {connect} from "react-redux";
 import Settings from "./Settings";
 import {refreshProfileInSettings, savePhoto, updateBioProfile, updateWasSuccessfully} from "../../../Redux/profile-reducer";
 import Preloader from "../../Common/Preloader/Preloader";
+import {getProfile, getUpdatingBioSuccess} from "../../../Redux/selectors/profile-selectors";
 
 const SettingsContainer = (props) => {
 
@@ -38,8 +39,8 @@ const SettingsContainer = (props) => {
 }
 
 const mapStateToProps = state => ({
-	profile: state.profilePage.profile,
-	updatingBioSuccess: state.profilePage.updatingBioSuccess
+	profile: getProfile(state),
+	updatingBioSuccess: getUpdatingBioSuccess(state)
 })
 
 export default connect(mapStateToProps, {refreshProfileInSettings, updateBioProfile, updateWasSuccessfully, savePhoto})(SettingsContainer);

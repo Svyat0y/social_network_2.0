@@ -7,6 +7,7 @@ import {addPostMessage, getUserProfile, getUserStatus, updateUserStatus} from ".
 import Profile from "./Profile";
 import ProfilePosts from "./ProfilePosts";
 import Preloader from "../../Common/Preloader/Preloader";
+import {getAuthorizedId, getPostData, getProfile, getStatus} from "../../../Redux/selectors/profile-selectors";
 
 const ProfileContainer = (props) => {
 
@@ -32,10 +33,10 @@ const ProfileContainer = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-	profile: state.profilePage.profile,
-	postData: state.profilePage.postData,
-	status: state.profilePage.status,
-	authorizedUserid: state.auth.id
+	profile: getProfile(state),
+	postData: getPostData(state),
+	status: getStatus(state),
+	authorizedUserid: getAuthorizedId(state)
 })
 
 export default compose(

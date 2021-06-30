@@ -57,7 +57,7 @@ const usersReducer = (state = initialState, action) => {
 //action creators
 const setUsers = (users) => ({type: SET_USERS_DATA, payload: users})
 const setTotalCount = (totalCount) => ({type: SET_TOTAL_COUNT, payload: totalCount})
-const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, payload: currentPage})
+const setCurrentPage = (page) => ({type: SET_CURRENT_PAGE, payload: page})
 const setToggleFollow = (userId) => ({type: SET_TOGGLE_FOLLOW, payload: userId})
 const setIsFetching = (isFetching) => ({type: SET_IS_FETCHING, payload: isFetching})
 const setFollowingInProgress = (isFollowing, userId) => ({type: SET_FOLLOWING_IN_PROGRESS, payload: {isFollowing, userId}})
@@ -66,11 +66,11 @@ const setFollowingInProgress = (isFollowing, userId) => ({type: SET_FOLLOWING_IN
 //thunk creators
 
 // receive users list
-export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
-	dispatch(setCurrentPage(currentPage))
+export const requestUsers = (page, pageSize) => async (dispatch) => {
+	dispatch(setCurrentPage(page))
 	dispatch(setIsFetching(true))
 
-	const data = await usersAPI.getUsers(currentPage, pageSize)
+	const data = await usersAPI.getUsers(page, pageSize)
 
 	dispatch(setIsFetching(false))
 	dispatch(setTotalCount(data.totalCount))
