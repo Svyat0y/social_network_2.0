@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 25px;
+    background: #443F49;
 }
 
 .logo {
@@ -20,4 +21,35 @@
     cursor: pointer;
 }
 
+.menuBtn_visible {
+    display: none;
+}
+
+.menuBtn_visible button,
+.actionLogout_box button {
+    width: 80px;
+    height: 35px;
+    color: white;
+    font-size: 18px;
+    background: #443F49;
+    border: 1px solid #8e8888;
+    border-radius: 10px;
+}
+
+.menuBtn_visible button:active,
+.actionLogout_box button {
+    transform: scale(0.99);
+}
+
 /* styles for header component end */
+
+
+/* media for header */
+
+@media screen and (max-width: 776px) {
+    .menuBtn_visible {
+        display: block;
+    }
+}
+
+/* media for header end */

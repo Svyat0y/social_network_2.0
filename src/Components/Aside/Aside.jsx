@@ -2,10 +2,14 @@ import React from "react";
 import style from "./Aside.module.css";
 import {NavLink} from "react-router-dom";
 import ConnectedAvatarsContainer from "./AvatarsContainer/AvatarsContainer";
+import {connect} from "react-redux";
 
-const Aside = () => {
+const Aside = (props) => {
+
+	const {menuVisible} = props
+
 	return (
-		<aside className={style.aside}>
+		<aside className={`${style.aside} ${menuVisible ? style.asideOpen : ""}`}>
 				<ul className={style.nav}>
 					<li><NavLink to="/profile" activeClassName={style.active_link}><span>Profile</span></NavLink></li>
 					<li><NavLink to="/messages" activeClassName={style.active_link}><span>Messages</span></NavLink></li>
@@ -21,4 +25,8 @@ const Aside = () => {
 	);
 }
 
-export default Aside;
+const mapStateToProps = (state) => ({
+	menuVisible: state.sideBar.menuVisible
+})
+
+export default connect(mapStateToProps, null)(Aside);

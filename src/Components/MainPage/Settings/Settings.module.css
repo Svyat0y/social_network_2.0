@@ -9,6 +9,7 @@
     padding: 10px;
     border: 1px solid #8E8888;
     border-radius: 5px;
+    backdrop-filter: blur(25px) brightness(85%);
 }
 
 .upload_Photo_wrapper span {
@@ -26,6 +27,7 @@
     border-radius: 5px;
     margin-top: 25px;
     position: relative;
+    backdrop-filter: blur(25px) brightness(85%);
 }
 
 .settings_box_wrapper {

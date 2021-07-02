@@ -8,12 +8,16 @@ import Profile from "./Profile";
 import ProfilePosts from "./ProfilePosts";
 import Preloader from "../../Common/Preloader/Preloader";
 import {getAuthorizedId, getPostData, getProfile, getStatus} from "../../../Redux/selectors/profile-selectors";
+import {closeMenu} from "../../../Redux/side-bar-reducer";
 
 const ProfileContainer = (props) => {
 
-	const {profile, postData, addPostMessage, status, getUserProfile, getUserStatus, authorizedUserid, updateUserStatus} = props
+	const {profile, postData, addPostMessage, status, getUserProfile, getUserStatus, authorizedUserid, updateUserStatus, closeMenu} = props
 
 	useEffect(() => {refreshProfile()}, [props.match.params.userId])
+
+	// close the menu after rendering the selected component
+	useEffect(() => {closeMenu()},[])
 
 	const refreshProfile = () => {
 		let userId = props.match.params.userId
@@ -40,6 +44,6 @@ const mapStateToProps = (state) => ({
 })
 
 export default compose(
-	connect(mapStateToProps, {getUserProfile, addPostMessage, getUserStatus, updateUserStatus}),
+	connect(mapStateToProps, {getUserProfile, addPostMessage, getUserStatus, updateUserStatus, closeMenu}),
 	withRouter
 )(ProfileContainer);

@@ -172,17 +172,15 @@
 }
 
 .postMessage_wrapper {
-    width: 100%;
-    margin: 25px auto 0;
-}
-
-.postMessage_box {
     max-width: 100%;
     height: auto;
     display: flex;
     justify-content: flex-start;
-    padding: 0 0 25px 0;
-    border-bottom: 1px solid #8E8888;
+    margin: 25px auto 0;
+    padding: 25px;
+    backdrop-filter: blur(25px) brightness(85%);
+    border: 1px solid #8e8888;
+    border-radius: 10px;
 }
 
 .postMessage_user {

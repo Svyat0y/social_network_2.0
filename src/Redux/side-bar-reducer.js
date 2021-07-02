@@ -1,3 +1,8 @@
+
+const SET_OPEN_MENU = "SET_OPEN_MENU"
+const SET_CLOSE_MENU = "SET_CLOSE_MENU"
+
+
 // initial state for side-bar avatars (static)
 const initialState = {
 	avatarsData: [
@@ -31,15 +36,33 @@ const initialState = {
 			userImg: 'https://i2.wp.com/andrey-eltsov.ru/wp-content/uploads/2017/09/DopNaAvu1.jpg',
 			userName: 'Vlad'
 		}
-	]
+	],
+	menuVisible: false
 }
 
 const sideBarReducer = (state = initialState, action) => {
 	switch (action.type) {
 
+		case SET_OPEN_MENU:
+			return {...state, menuVisible: action.payload}
+
+		case SET_CLOSE_MENU:
+			return {...state, menuVisible: action.payload}
+
 		default:
 			return state
 	}
+}
+
+export const setOpenMenu = () => ({type: SET_OPEN_MENU, payload: true})
+export const setCloseMenu = () => ({type: SET_CLOSE_MENU, payload: false})
+
+
+export const openMenu = () => (dispatch) => {
+	dispatch(setOpenMenu())
+}
+export const closeMenu = () => (dispatch) => {
+	dispatch(setCloseMenu())
 }
 
 export default sideBarReducer;

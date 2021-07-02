@@ -3,13 +3,14 @@
 .messages_wrapper {
     overflow: hidden;
     margin: 25px;
-    border: 1px solid #8E8888;
+    border: 1px solid #8e8888;
     border-radius: 10px;
     max-width: 100%;
     height: 600px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    backdrop-filter: blur(25px) brightness(85%);
 }
 
 /* styles for dialogs users */

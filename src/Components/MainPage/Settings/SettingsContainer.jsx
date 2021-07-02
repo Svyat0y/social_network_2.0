@@ -4,20 +4,20 @@ import Settings from "./Settings";
 import {refreshProfileInSettings, savePhoto, updateBioProfile, updateWasSuccessfully} from "../../../Redux/profile-reducer";
 import Preloader from "../../Common/Preloader/Preloader";
 import {getProfile, getUpdatingBioSuccess} from "../../../Redux/selectors/profile-selectors";
+import {closeMenu} from "../../../Redux/side-bar-reducer";
 
 const SettingsContainer = (props) => {
 
-	const {profile, refreshProfileInSettings, updateBioProfile, updatingBioSuccess, updateWasSuccessfully, savePhoto} = props
+	const {profile, refreshProfileInSettings, updateBioProfile, updatingBioSuccess, updateWasSuccessfully, savePhoto, closeMenu} = props
 
 	const uploadPhoto = (e) => {
 		if (e.target.files) savePhoto(e.target.files[0])
 	}
 
 	useEffect(() => {
-		if (!profile) {
-			refreshProfileInSettings()
-		}
-	}, [profile])
+		refreshProfileInSettings()
+		closeMenu()
+	}, [])
 
 	useEffect(() => {
 		return () => {
@@ -43,4 +43,4 @@ const mapStateToProps = state => ({
 	updatingBioSuccess: getUpdatingBioSuccess(state)
 })
 
-export default connect(mapStateToProps, {refreshProfileInSettings, updateBioProfile, updateWasSuccessfully, savePhoto})(SettingsContainer);
+export default connect(mapStateToProps, {refreshProfileInSettings, updateBioProfile, updateWasSuccessfully, savePhoto, closeMenu})(SettingsContainer);

@@ -59,6 +59,6 @@ const SettingsForm = (props) => {
 	);
 }
 
-const SettingsFormRedux = reduxForm({form: "settingsForm"})(SettingsForm)
+const SettingsFormRedux = reduxForm({form: "settingsForm", enableReinitialize: true})(SettingsForm)
 
 export default SettingsFormRedux;

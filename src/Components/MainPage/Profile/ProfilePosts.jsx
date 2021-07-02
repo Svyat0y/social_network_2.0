@@ -9,17 +9,15 @@ const Post = (props) => {
 
 	return (
 		<div className={style.postMessage_wrapper}>
-			<div className={style.postMessage_box}>
-				<div className={style.postMessage_user}>
-					<div className={style.postMessage_img_Wrapper}>
-						<img src={img} alt='user_avatar'/>
-					</div>
-					<p className={style.user_name}>{name}</p>
+			<div className={style.postMessage_user}>
+				<div className={style.postMessage_img_Wrapper}>
+					<img src={img} alt='user_avatar'/>
 				</div>
-				<div className={style.postMessage_message_box}>
-					<p>{message}</p>
-					<div className={style.likesCount_box}><ThumbUpIcon className={style.likeIcon}/><span>{likesCount}</span></div>
-				</div>
+				<p className={style.user_name}>{name}</p>
+			</div>
+			<div className={style.postMessage_message_box}>
+				<p>{message}</p>
+				<div className={style.likesCount_box}><ThumbUpIcon className={style.likeIcon}/><span>{likesCount}</span></div>
 			</div>
 		</div>
 	);

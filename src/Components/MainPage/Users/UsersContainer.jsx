@@ -10,12 +10,16 @@ import {
 	getTotalCount,
 	getUsers
 } from "../../../Redux/selectors/users-selectors";
+import {closeMenu} from "../../../Redux/side-bar-reducer";
 
 const UsersContainer = (props) => {
 
-	const {currentPage, pageSize} = props
+	const {currentPage, pageSize, closeMenu} = props
 
-	useEffect(() => {props.requestUsers(currentPage, pageSize)}, [])
+	useEffect(() => {
+		props.requestUsers(currentPage, pageSize)
+		closeMenu()
+	}, [])
 
 	const onPageChanged = (currentPage) => props.requestUsers(currentPage, pageSize)
 
@@ -31,4 +35,4 @@ const mapStateToProps = (state) => ({
 	isFetching: getIsFetching(state)
 })
 
-export default connect(mapStateToProps, {requestUsers, followAccept, unfollowAccept})(UsersContainer);
+export default connect(mapStateToProps, {requestUsers, followAccept, unfollowAccept, closeMenu})(UsersContainer);
