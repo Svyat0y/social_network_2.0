@@ -1,2 +1,0 @@
-(this["webpackJsonpsocial_network_2.0"]=this["webpackJsonpsocial_network_2.0"]||[]).push([[9],{324:function(t,i,n){t.exports={notifications_wrapper:"Notifications_notifications_wrapper__2Ptg5"}},343:function(t,i,n){"use strict";n.r(i);n(0);var e=n(324),o=n.n(e),s=n(1);i.default=function(){return Object(s.jsx)("div",{className:o.a.notifications_wrapper,children:"Expected in the future!"})}}}]);
-//# sourceMappingURL=9.b9ee10c9.chunk.js.map
