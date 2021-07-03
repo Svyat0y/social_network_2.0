@@ -1,0 +1,2 @@
+(this["webpackJsonpsocial_network_2.0"]=this["webpackJsonpsocial_network_2.0"]||[]).push([[8],{323:function(e,s,c){e.exports={music_wrapper:"Music_music_wrapper__1gA6v"}},342:function(e,s,c){"use strict";c.r(s);c(0);var r=c(323),t=c.n(r),i=c(1);s.default=function(){return Object(i.jsx)("div",{className:t.a.music_wrapper,children:"Expected in the future!"})}}}]);
+//# sourceMappingURL=8.b7480e72.chunk.js.map
