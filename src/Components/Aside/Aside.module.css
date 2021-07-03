@@ -12,7 +12,7 @@
 
 .asideOpen {
     transform: translateX(0%);
-    transition: all 1s ease;
+    transition: all .5s ease;
 }
 
 /*.asideClose {*/
@@ -97,20 +97,18 @@
 
 
 
-/* media for aside */
-
-@media screen and (max-width: 776px){
+/* media styles for aside */
+@media screen and (max-width: 991px){
     aside {
         position: fixed;
         left: 0;
         top: 0;
-        background: #5b555f;
+        background: #443F49;
         z-index: 21321;
         width: 100% !important;
         height: 100% !important;
-        transform: translateX(-100%);
+        transform: translateY(-100%);
         overflow: hidden !important;
     }
 }
-
-/* media for aside end */
+/* media styles for aside end */

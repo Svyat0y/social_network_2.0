@@ -8,7 +8,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .user_block_wrapper {
@@ -53,10 +52,15 @@
     flex-direction: column;
 }
 
-.user_box_right .status {
+.user_box_right .user_title_wrapper {
     color: white;
     margin-bottom: 10px;
     word-break: break-word;
+}
+
+.user_box_right .status,
+.user_box_right .name {
+    color: #e8e0cf;
 }
 
 /*.user_box_right .name {*/
@@ -64,3 +68,20 @@
 /*}*/
 
 /* styles for users end */
+
+
+
+/* media styles for users page */
+@media screen and (max-width: 640px){
+    .users_wrapper {
+        padding: 35px 15px;
+    }
+    .user_block_wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
+    .user_box_right {
+        margin: 10px 0 0 0;
+    }
+}
+/* media styles for users page end */

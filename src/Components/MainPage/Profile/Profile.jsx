@@ -23,15 +23,22 @@ const Profile = (props) => {
 				<h1 className={style.profile_name}>{fullName}</h1>
 				<ProfileStatusWithHooks status={status} updateUserStatus={updateUserStatus} />
 				<div className={style.bio_wrapper}>
-					<span className={style.info_box_title}>Looking for a job: <p
-						className={style.info_box_desc}>{lookingForAJob && "Yes" || "No"}</p></span>
-					<span className={style.info_box_title}>Job description: <p
-						className={style.info_box_desc}>{lookingForAJobDescription}</p></span>
-					<p className={style.info_box_title_about}>About Me:</p>
-					<p className={style.info_box_desc}>{aboutMe}</p>
+					<div className={style.info_box_lfAJob_wrapper}>
+						<span className={style.info_box_title}>Looking for a job:</span>
+						<span className={style.info_box_desc}>{lookingForAJob && "Yes" || "No"}</span>
+					</div>
+					<div className={style.info_box_jobDesc_wrapper}>
+						<span className={style.info_box_title}>Job description:</span>
+						<p className={style.info_box_desc}>{lookingForAJobDescription}</p>
+					</div>
+					<div className={style.info_box_about_wrapper}>
+						<span className={style.info_box_title}>About Me:</span>
+						<p className={style.info_box_desc}>{aboutMe}</p>
+					</div>
 					{/*<button className={style.profile_sendMessage_btn}>Send message</button>*/}
 				</div>
 			</div>
+
 		</div>
 	);
 }

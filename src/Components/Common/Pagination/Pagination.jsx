@@ -18,7 +18,7 @@ const Pagination = ({onPageChanged, totalCount, pageSize, currentPage, portionSi
 		<div className={style.pagination_wrapper}>
 			{/*{portionNumber > 1 && <button className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber - 1)}}>Prev</button>}*/}
 			{<button disabled={portionNumber === 1 && true} className={style.prevNextBtn} onClick={() => {setPortionNumber(portionNumber - 1)}}>Prev</button>}
-			<div>
+			<div className={style.pagination_number_wrapper}>
 				{pages.filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
 					.map((p, index) => <span
 						onClick={() => {onPageChanged(p)}}

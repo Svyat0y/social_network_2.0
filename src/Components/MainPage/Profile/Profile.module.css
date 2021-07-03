@@ -69,25 +69,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin-top: 15px;
 }
 
-.bio_wrapper .info_box_title,
-.info_box_title_about{
-    font-size: 18px;
-    margin-bottom: 10px;
+.info_box_lfAJob_wrapper,
+.info_box_jobDesc_wrapper,
+.info_box_about_wrapper {
+    margin-bottom: 15px;
+}
+
+.info_box_title {
     color: #E8E0CF;
-}
-
-.info_box_title_about {
-    font-size: 24px;
-    margin: 15px 0 0;
-}
-
-.bio_wrapper .info_box_desc {
-    margin-top: 5px;
-    color: lightgray;
     font-size: 18px;
-    word-break: break-word;
+    margin-right: 10px;
+}
+
+.info_box_desc {
+    color: whitesmoke;
+}
+
+.info_box_jobDesc_wrapper .info_box_desc,
+.info_box_about_wrapper .info_box_desc {
+    margin-top: 5px;
 }
 
 .social_links_wrapper {
@@ -247,3 +250,41 @@
 /* styles for profile posts end */
 
 /* styles for profile page end */
+
+
+/* media styles for profile page */
+@media screen and (max-width: 991px){
+    .profileContainer_wrapper {
+        padding: 25px 15px;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .profile_img_wrapper {
+        /*min-width: 250px;*/
+        /*width: 250px;*/
+        /*height: 250px;*/
+    }
+}
+
+@media screen and (max-width: 639px){
+    .profile_wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile_info_wrapper {
+        margin: 0;
+    }
+    .profile_name {
+        text-align: center;
+        display: block;
+        margin-top: 15px;
+    }
+    .postMessage_wrapper {
+        flex-direction: column;
+    }
+    .postMessage_user {
+        margin-bottom: 10px;
+    }
+}
+/* media styles for profile page end */

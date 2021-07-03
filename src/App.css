@@ -5,15 +5,14 @@
   min-height: 100vh;
   border-radius: 10px;
   margin: 0 auto;
+  padding-top: 80px;
   background: rgba(59,51,64, 0.7);
-  /*backdrop-filter: blur(50px);*/
-  padding: 0 0 25px;
   box-sizing: border-box;
 }
 
 .main_wrapper {
   width: 100%;
-  min-height: 800px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -21,7 +20,6 @@
 .main_page {
   width: 80%;
   height: auto;
-  border-left: 1px solid #8E8888;
 }
 
 /* common styles for all app end */
@@ -51,3 +49,12 @@
 }
 
 /* material ui button end */
+
+
+/* common media styles for app */
+@media screen and (max-width: 991px){
+  .main_page {
+    width: 100%;
+  }
+}
+/* common media styles for aside end */

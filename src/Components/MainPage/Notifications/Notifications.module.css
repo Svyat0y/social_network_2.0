@@ -1,0 +1,8 @@
+.notifications_wrapper {
+    padding: 25px;
+    backdrop-filter: blur(25px) brightness(85%);
+    width: 100%;
+    height: auto;
+    color: #e8e0cf;
+    text-align: center;
+}

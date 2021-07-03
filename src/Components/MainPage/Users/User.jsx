@@ -27,8 +27,8 @@ const User = ({userName, userImg, userStatus, userId, followAccept, followed, un
 
 			</div>
 			<div className={style.user_box_right}>
-				<span className={style.status}><span className={style.name}>Name: </span>{userName}</span>
-				<span className={style.status}><span className={style.name}>Status: </span>{userStatus}</span>
+				<span className={style.user_title_wrapper}><span className={style.name}>Name: </span>{userName}</span>
+				<span className={style.user_title_wrapper}><span className={style.status}>Status: </span>{userStatus}</span>
 			</div>
 		</div>
 	);

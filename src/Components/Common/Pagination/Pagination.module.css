@@ -5,12 +5,17 @@
     display: flex;
     justify-content: center;
     margin-top: 35px;
+    padding: 0 35px;
 }
 
 .numbers_wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.pagination_number_wrapper {
+    margin: 0 10px;
 }
 
 .pg_number {
@@ -32,7 +37,7 @@
     color: white;
     background: rgba(232,224,207, 0.2);
     user-select: none;
-    margin: 0 10px;
+    border-radius: 10px;
 }
 .prevNextBtn:active {
     transform: scale(0.98);
@@ -43,3 +48,21 @@
 }
 
 /* styles for pagination end */
+
+
+/* media styles for pagination */
+
+@media screen and (max-width: 640px) {
+    .pagination_wrapper {
+        min-width: initial;
+        padding: 0 15px;
+    }
+    .pagination_number_wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+}
+
+/* media styles for pagination end */

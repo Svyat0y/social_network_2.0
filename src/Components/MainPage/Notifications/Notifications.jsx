@@ -1,8 +1,9 @@
 import React from "react";
+import style from "./Notifications.module.css"
 
-const Notifications = (props) => {
+const Notifications = () => {
 
-	return <div>notifications</div>
+	return <div className={style.notifications_wrapper}>Expected in the future!</div>
 }
 
 export default Notifications;
