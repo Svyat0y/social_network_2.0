@@ -53,18 +53,20 @@
     margin: 0 auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     max-width: 280px;
 }
 
 .avatar_wrapper {
-    flex: 0 0 33%;
+    flex: 0 0 30%;
+    max-width: 30%;
     display: flex;
     padding: 6px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .img_wrapper {
@@ -80,6 +82,7 @@
 .user_name {
     color: #E8E0CF;
     margin-top: 4px;
+    overflow-y: hidden;
 }
 /* style for aside avatars end*/
 

@@ -21,7 +21,7 @@ const initialState = {
 		},
 		{
 			id: 1,
-			name: 'Panda',
+			name: 'Volk',
 			message: 'hi, are u there??',
 			likesCount: '35',
 			img: 'https://image1.thematicnews.com/uploads/images/00/00/41/2015/04/30/ad358ed4d0.jpg'

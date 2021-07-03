@@ -9,12 +9,12 @@ const initialState = {
 		{
 			id: 0,
 			userImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6b7WENFquctsWy8WgMSHmFJbVyJXf0lQ4R2XRAQcd2WgOK2IIfFlLUFcAcsdnpA8S_Wg&usqp=CAU',
-			userName: 'Andy'
+			userName: 'Sponge Bob'
 		},
 		{
 			id: 1,
 			userImg: 'https://image1.thematicnews.com/uploads/images/00/00/41/2015/04/30/ad358ed4d0.jpg',
-			userName: 'Panda'
+			userName: 'Volk'
 		},
 		{
 			id: 2,
