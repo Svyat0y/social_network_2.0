@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import style from "./Header.module.css";
 import {connect} from "react-redux";
 import {logout} from "../../Redux/auth-reducer";
@@ -6,7 +6,7 @@ import {closeMenu, openMenu} from "../../Redux/side-bar-reducer";
 
 const HeaderContainer = (props) => {
 
-	const {logout, openMenu } = props
+	const {logout, openMenu} = props
 
 	const getLogout = () => logout()
 

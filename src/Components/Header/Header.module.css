@@ -16,10 +16,6 @@
     z-index: 999;
 }
 
-.logo {
-    color: white;
-}
-
 .actionLogout_box {
     color: white;
     cursor: pointer;
@@ -30,7 +26,11 @@
 }
 
 .menuBtn_visible button,
-.actionLogout_box button {
+.actionLogout_box button,
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 80px;
     height: 35px;
     color: white;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import style from "./Aside.module.css";
 import {NavLink} from "react-router-dom";
 import ConnectedAvatarsContainer from "./AvatarsContainer/AvatarsContainer";
@@ -7,6 +7,11 @@ import {connect} from "react-redux";
 const Aside = (props) => {
 
 	const {menuVisible} = props
+
+	useEffect(() => {
+		const body = document.querySelector('body');
+		body.style.overflow = menuVisible ? 'hidden' : 'auto';
+	}, [menuVisible])
 
 	return (
 		<aside className={`${style.aside} ${menuVisible ? style.asideOpen : ""}`}>
