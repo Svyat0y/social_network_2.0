@@ -1,17 +1,21 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import style from './Login.module.css'
 import {connect} from "react-redux";
-import {login} from "../Redux/auth-reducer";
-import {Redirect} from "react-router-dom";
+import {loginAction} from "../Redux/auth-reducer";
 import LoginReduxForm from "./LoginForm";
+import {startInitialize} from "../Redux/app-reducer";
+import {getCaptchaUrl, getIsAuth, getIsOwner} from "../Redux/selectors/auth-selectors";
+import {Redirect} from "react-router-dom";
 
 const Login = (props) => {
 
-	const {isAuth, login, captchaUrl} = props
+	const {loginAction, captchaUrl, isOwner} = props
 
-	const onSubmit = (values) => login(values.email, values.password, values.rememberMe, values.captcha)
+	const onSubmit = (values) => {
+		loginAction(values.email, values.password, values.rememberMe, values.captcha)
+	}
 
-	if(isAuth) return <Redirect to="/profile"/>
+	if(isOwner) return <Redirect to={"/"}/>
 
 	return (
 		<div className={style.login_wrapper}>
@@ -23,8 +27,8 @@ const Login = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-	isAuth: state.auth.isAuth,
-	captchaUrl: state.auth.captchaUrl
+	captchaUrl: getCaptchaUrl(state),
+	isOwner: getIsOwner(state)
 })
 
-export default connect(mapStateToProps, {login})(Login);
+export default connect(mapStateToProps, {loginAction, startInitialize})(Login);

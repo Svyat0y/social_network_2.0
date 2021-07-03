@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import style from "./Profile.module.css"
 import {connect} from "react-redux";
 import {compose} from "redux";
-import {withRouter} from "react-router-dom"
+import {Redirect, withRouter} from "react-router-dom"
 import {addPostMessage, getUserProfile, getUserStatus, updateUserStatus} from "../../../Redux/profile-reducer";
 import Profile from "./Profile";
 import ProfilePosts from "./ProfilePosts";
@@ -16,8 +16,11 @@ const ProfileContainer = (props) => {
 
 	useEffect(() => {refreshProfile()}, [props.match.params.userId])
 
-	// close the menu after rendering the selected component
-	useEffect(() => {closeMenu()},[])
+	// close the menu after rendering the selected component, and scroll up
+	useEffect(() => {
+		closeMenu()
+		window.scrollTo(0, 0)
+	},[])
 
 	const refreshProfile = () => {
 		let userId = props.match.params.userId

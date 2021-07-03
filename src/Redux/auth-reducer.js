@@ -49,7 +49,7 @@ export const getAuthUserData = () => async (dispatch) => {
 }
 
 // login
-export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
+export const loginAction = (email, password, rememberMe, captcha) => async (dispatch) => {
 	const data = await authAPI.login(email, password, rememberMe, captcha)
 	if (data.resultCode === 0) {
 		dispatch(getAuthUserData())

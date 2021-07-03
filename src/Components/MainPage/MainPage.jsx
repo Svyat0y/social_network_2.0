@@ -6,8 +6,8 @@ import {hocWithLazyLoad} from "../../hoc/hocWithLazyLoad";
 // components with lazy load
 const ProfileContainer = React.lazy(() => import("./Profile/ProfileContainer"));
 const MessagesContainer = React.lazy(() => import("./Messages/MessagesContainer"));
-const Music = React.lazy(() => import("./Music/Music"));
-const Notifications = React.lazy(() => import("./Notifications/Notifications"));
+const Music = React.lazy(() => import("./Music/MusicContainer"));
+const Notifications = React.lazy(() => import("./Notifications/NotificationsContainer"));
 const UsersContainer = React.lazy(() => import("./Users/UsersContainer"));
 const Settings = React.lazy(() => import("./Settings/SettingsContainer"));
 
