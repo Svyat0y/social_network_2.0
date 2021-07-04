@@ -1,2 +1,0 @@
-(this["webpackJsonpsocial_network_2.0"]=this["webpackJsonpsocial_network_2.0"]||[]).push([[8],{323:function(e,c,s){e.exports={music_wrapper:"Music_music_wrapper__1gA6v"}},342:function(e,c,s){"use strict";s.r(c);var t=s(0),n=s(323),u=s.n(n),r=s(12),i=s(41),a=s(1);c.default=Object(r.b)(null,{closeMenu:i.a})((function(e){var c=e.closeMenu;return Object(t.useEffect)((function(){c()}),[]),Object(a.jsx)("div",{className:u.a.music_wrapper,children:"Expected in the future!"})}))}}]);
-//# sourceMappingURL=8.29b9b618.chunk.js.map
