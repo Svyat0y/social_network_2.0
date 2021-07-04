@@ -4,10 +4,10 @@ import React from "react";
 
 const DialogsUser = (props) => {
 
-	const {id, userName, userImg} = props
+	const {id, userName, userImg, closeUserList} = props
 
 	return (
-		<NavLink to={"/messages/" + id} activeClassName={style.active_dialog_user}>
+		<NavLink to={"/messages/" + id} activeClassName={style.active_dialog_user} onClick={closeUserList}>
 			<div className={style.dialogsUser_wrapper}>
 				<div className={style.dialogsUser_img_wrapper}>
 					<img src={userImg} alt="user_avatar"/>
@@ -20,9 +20,9 @@ const DialogsUser = (props) => {
 
 const DialogsUsers = (props) => {
 
-	const {usersWithDialogs} = props
+	const {usersWithDialogs, closeUserList} = props
 
-	const dialogsUser = usersWithDialogs.map(u => <DialogsUser key={u.id} {...u}/>)
+	const dialogsUser = usersWithDialogs.map(u => <DialogsUser key={u.id} {...u} closeUserList={closeUserList}/>)
 
 	return (
 		<>

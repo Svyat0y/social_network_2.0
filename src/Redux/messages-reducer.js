@@ -1,6 +1,7 @@
 import {reset} from "redux-form";
 
 const SEND_MY_MESSAGE_TEXT = "SEND_MY_MESSAGE_TEXT"
+const SET_OPEN_DIALOG = "SET_OPEN_DIALOG"
 
 
 const initialState = {
@@ -28,7 +29,7 @@ const initialState = {
 		{
 			id: 4000,
 			userImg: 'https://drasler.ru/wp-content/uploads/2019/05/%D0%94%D0%B5%D0%B2%D1%83%D1%88%D0%BA%D0%B0-%D0%B1%D1%80%D1%8E%D0%BD%D0%B5%D1%82%D0%BA%D0%B0-%D0%BD%D0%B0%D1%80%D0%B8%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%B0%D1%8F-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%B8-%D1%80%D0%B8%D1%81%D1%83%D0%BD%D0%BA%D0%B8023.jpg',
-			userName: 'July'
+			userName: 'Julia'
 		},
 		{
 			id: 5567,
@@ -36,7 +37,8 @@ const initialState = {
 			userName: 'Vlad'
 		}
 	],
-	dialogsMessages: [{id: 0, message: 'hi'}, {id: 1, message: 'how are u?'}, {id: 2, message: 'maybe go beer?'}],
+	dialogsMessages: [{id: 0, message: 'hi'}, {id: 1, message: 'how are u?'}, {id: 2, message: 'you here?'}],
+	openDialogWithUser: true
 }
 
 const messagesReducer = (state = initialState, action) => {
@@ -51,6 +53,9 @@ const messagesReducer = (state = initialState, action) => {
 			}
 			return state
 
+		case SET_OPEN_DIALOG:
+			return {...state, openDialogWithUser: action.payload}
+
 		default:
 			return state
 	}
@@ -58,6 +63,7 @@ const messagesReducer = (state = initialState, action) => {
 
 //action creators
 export const sendMyMessage = (body) => ({type: SEND_MY_MESSAGE_TEXT, payload: body})
+export const setOpenDialogWithUser = (isOpen) => ({type: SET_OPEN_DIALOG, payload: isOpen})
 
 
 // thunk creators
@@ -66,6 +72,10 @@ export const sendMyMessage = (body) => ({type: SEND_MY_MESSAGE_TEXT, payload: bo
 export const sendMessage = (userId, body) => (dispatch) => {
 	dispatch(sendMyMessage(body))
 	dispatch(reset("addDialogMessageForm"))
+}
+
+export const openUserslistAction = (isOpen) => (dispatch) => {
+	dispatch(setOpenDialogWithUser(isOpen))
 }
 
 export default messagesReducer;

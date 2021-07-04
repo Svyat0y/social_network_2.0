@@ -15,7 +15,7 @@ const Messages = (props) => {
 
 const DialogsMessages = (props) => {
 
-	const {dialogsMessages, sendMessage, dialogUserId} = props
+	const {dialogsMessages, sendMessage, dialogUserId, openDialogWithUser, openUserList} = props
 	const messages = dialogsMessages.map(m => <Messages key={m.id} message={m.message}/>)
 
 	const addNewDialogMessage = (formValues) => {
@@ -23,13 +23,14 @@ const DialogsMessages = (props) => {
 	}
 
 	return (
-		<div className={style.dialogs_messages_block}>
+		<div className={`${style.dialogs_messages_block} ${openDialogWithUser && style.dialogs_messages_block_isOpen}`}>
 			<div className={style.dialogs_messages_container}>
 				{messages}
 			</div>
 			<div className={style.dialogs_messages_footer}>
 				<AddDialogMessageFormRedux onSubmit={addNewDialogMessage}/>
 			</div>
+			<div className={style.back_to_listUsers}><button onClick={openUserList}>{"<< back"}</button></div>
 		</div>
 	);
 }

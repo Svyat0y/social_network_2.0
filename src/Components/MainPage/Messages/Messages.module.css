@@ -65,7 +65,7 @@
 
 .dialogs_messages_block {
     padding: 25px;
-    width: 100%;
+    width: 65%;
     height: 600px;
     display: flex;
     flex-direction: column;
@@ -129,6 +129,25 @@
     transform: scale(0.99);
 }
 
+.back_to_listUsers {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: none;
+}
+
+.back_to_listUsers button {
+    color: #e8e0cf;
+    padding: 5px 15px;
+    background: transparent;
+    border: 1px solid #8e8888;
+    border-radius: 5px;
+}
+
+.back_to_listUsers button:active {
+    transform: scale(.99);
+}
+
 
 /* styles for dialogs messages container end */
 
@@ -151,6 +170,21 @@
 }
 
 @media screen and (max-width: 639px) {
-
+    .messages_users_block {
+        width: 100%;
+    }
+    .dialogs_messages_block {
+        width: 100%;
+        display: none;
+    }
+    .messages_users_block_isHidden {
+        width: 0;
+    }
+    .dialogs_messages_block_isOpen {
+        display: flex;
+    }
+    .back_to_listUsers {
+        display: block;
+    }
 }
 /* media styles for messages page end */
