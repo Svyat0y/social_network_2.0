@@ -1,5 +1,5 @@
 .settings_wrapper {
-    margin: 35px 25px 50px;
+    margin: 25px 25px 50px;
     height: auto;
     max-width: 100%;
     border-radius: 10px;
@@ -21,6 +21,7 @@
     width: 35%;
     color: #E8E0CF;
 }
+
 .upload_Photo_wrapper input[type="file"] {
     width: 65%;
     background: #443F49;
@@ -91,15 +92,12 @@
     border-radius: 5px;
     position: relative;
     left: 0;
-    bottom: -50px;
-}
-
-.settings_form button:hover {
-    background: #E8E0CF;
+    bottom: -40px;
 }
 
 .settings_form button:active {
     transform: scale(0.99);
+    background: #E8E0CF;
 }
 
 .contacts_header {
@@ -119,6 +117,14 @@
 
 
 /* media styles for settings page */
+
+
+@media screen and (max-width: 991px) {
+    .settings_wrapper {
+        margin: 25px 15px 50px;
+    }
+}
+
 
 @media screen and (max-width: 639px) {
     .settings_form,

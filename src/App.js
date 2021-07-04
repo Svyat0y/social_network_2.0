@@ -10,9 +10,11 @@ import Preloader from "./Components/Common/Preloader/Preloader";
 
 const App = ({initialized, startInitialize, isAuth}) => {
 
-	useEffect(() => {startInitialize()}, [])
+	useEffect(() => {
+		startInitialize()
+	}, [])
 
-	if (!initialized) return <Preloader />
+	if (!initialized) return <Preloader/>
 
 	if (!isAuth) return <Login/>
 

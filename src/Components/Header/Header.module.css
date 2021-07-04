@@ -53,8 +53,10 @@
     .menuBtn_visible {
         display: block;
     }
+
     .header {
         padding: 0 15px;
     }
 }
+
 /* media styles for header end */

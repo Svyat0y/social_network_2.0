@@ -19,8 +19,12 @@ const HeaderContainer = (props) => {
 	return (
 		<header className={`${style.header}`}>
 			<div className={style.logo}>LOGO</div>
-			<div className={style.menuBtn_visible}><button onClick={actionOpenMenu}>Menu</button></div>
-			<div className={style.actionLogout_box}><button onClick={getLogout}>Logout</button></div>
+			<div className={style.menuBtn_visible}>
+				<button onClick={actionOpenMenu}>Menu</button>
+			</div>
+			<div className={style.actionLogout_box}>
+				<button onClick={getLogout}>Logout</button>
+			</div>
 		</header>
 	);
 }

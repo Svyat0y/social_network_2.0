@@ -1,4 +1,4 @@
-import {followedAPI, subscribeAPI, usersAPI} from "../api/api";
+import {subscribeAPI, usersAPI} from "../api/api";
 
 const SET_USERS_DATA = "SET_USERS_DATA";
 const SET_TOTAL_COUNT = "SET_TOTAL_COUNT";
@@ -40,14 +40,16 @@ const usersReducer = (state = initialState, action) => {
 			}
 
 		case SET_TOGGLE_FOLLOW:
-			return {...state, users: state.users.map(u => {
-					if(action.payload === u.id && !u.followed) {
-						return{...u, followed: true}
+			return {
+				...state, users: state.users.map(u => {
+					if (action.payload === u.id && !u.followed) {
+						return {...u, followed: true}
 					} else if (action.payload === u.id && u.followed) {
 						return {...u, followed: false}
 					}
 					return u
-				})}
+				})
+			}
 
 		default:
 			return state

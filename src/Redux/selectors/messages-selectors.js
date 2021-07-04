@@ -5,3 +5,7 @@ export const getUsersWithDialogs = (state) => {
 export const getDialogsMessages = (state) => {
 	return state.messagesPage.dialogsMessages
 }
+
+export const getOpenDialogWithUser = (state) => {
+	return state.messagesPage.openDialogWithUser
+}

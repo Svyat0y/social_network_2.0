@@ -12,7 +12,8 @@ const Settings = (props) => {
 				<span>Upload your photo:</span>
 				<input onChange={uploadPhoto} type="file"/>
 			</div>
-			<SettingsFormRedux onSubmit={saveSettingsForm} initialValues={profile} profile={profile} updatingBioSuccess={updatingBioSuccess}/>
+			<SettingsFormRedux onSubmit={saveSettingsForm} initialValues={profile} profile={profile}
+							   updatingBioSuccess={updatingBioSuccess}/>
 		</div>
 	);
 }

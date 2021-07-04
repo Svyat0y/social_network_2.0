@@ -16,12 +16,13 @@ const User = ({userName, userImg, userStatus, userId, followAccept, followed, un
 				{
 					followed
 						?
-						<Button disabled={followingInProgress.some(id => id === userId)} className={followed && "followed" || ""} variant="contained"
-								onClick={()=> unfollowAccept(userId)}
+						<Button disabled={followingInProgress.some(id => id === userId)} className={followed && "followed" || ""}
+								variant="contained"
+								onClick={() => unfollowAccept(userId)}
 						>Unfollow</Button>
 						:
 						<Button disabled={followingInProgress.some(id => id === userId)} variant="contained"
-								onClick={()=> followAccept(userId)}
+								onClick={() => followAccept(userId)}
 						>Follow</Button>
 				}
 

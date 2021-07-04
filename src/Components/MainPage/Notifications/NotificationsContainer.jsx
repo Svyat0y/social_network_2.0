@@ -8,7 +8,9 @@ const NotificationsContainer = (props) => {
 	const {closeMenu} = props
 
 	// close the menu after rendering the selected component
-	useEffect(() => {closeMenu()}, [])
+	useEffect(() => {
+		closeMenu()
+	}, [])
 
 	return <div className={style.notifications_wrapper}>Expected in the future!</div>
 }

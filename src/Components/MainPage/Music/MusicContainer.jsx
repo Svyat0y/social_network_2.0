@@ -8,7 +8,9 @@ const MusicContainer = (props) => {
 	const {closeMenu} = props
 
 	// close the menu after rendering the selected component
-	useEffect(() => {closeMenu()},[])
+	useEffect(() => {
+		closeMenu()
+	}, [])
 
 	return <div className={style.music_wrapper}>Expected in the future!</div>
 }

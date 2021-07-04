@@ -1,6 +1,6 @@
 .form_control.error textarea,
 .form_control.error input {
-    border: 1px solid red;
+    border: 1px solid bisque;
 }
 
 .form_control {
@@ -9,7 +9,7 @@
 
 .form_control .errorMessage {
     font-size: 14px;
-    color: red;
+    color: bisque;
     margin-bottom: 5px;
     position: absolute;
     left: 0;

@@ -70,18 +70,20 @@
 /* styles for users end */
 
 
-
 /* media styles for users page */
-@media screen and (max-width: 640px){
+@media screen and (max-width: 640px) {
     .users_wrapper {
         padding: 35px 15px;
     }
+
     .user_block_wrapper {
         flex-direction: column;
         width: 100%;
     }
+
     .user_box_right {
         margin: 10px 0 0 0;
     }
 }
+
 /* media styles for users page end */

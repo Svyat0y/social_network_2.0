@@ -43,4 +43,10 @@ const mapStateToProps = state => ({
 	updatingBioSuccess: getUpdatingBioSuccess(state)
 })
 
-export default connect(mapStateToProps, {refreshProfileInSettings, updateBioProfile, updateWasSuccessfully, savePhoto, closeMenu})(SettingsContainer);
+export default connect(mapStateToProps, {
+	refreshProfileInSettings,
+	updateBioProfile,
+	updateWasSuccessfully,
+	savePhoto,
+	closeMenu
+})(SettingsContainer);

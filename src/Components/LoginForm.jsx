@@ -1,9 +1,8 @@
-import {Element} from "./Common/FormControls/FormControls";
+import React from "react";
 import style from "./Login.module.css";
 import {Field, reduxForm} from "redux-form";
 import {required} from "../utils/validators";
-import React from "react";
-import {NavLink} from "react-router-dom";
+import {Element} from "./Common/FormControls/FormControls";
 
 const Input = Element("input")
 

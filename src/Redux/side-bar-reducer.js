@@ -1,4 +1,3 @@
-
 const SET_OPEN_MENU = "SET_OPEN_MENU"
 const SET_CLOSE_MENU = "SET_CLOSE_MENU"
 

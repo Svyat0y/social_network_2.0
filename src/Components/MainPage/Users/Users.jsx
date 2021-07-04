@@ -23,8 +23,8 @@ const Users = (props) => {
 		<>
 			<Pagination totalCount={totalCount} pageSize={pageSize} currentPage={currentPage} onPageChanged={onPageChanged}/>
 			{isFetching
-			? <Preloader />
-			: <div className={style.users_wrapper}>
+				? <Preloader/>
+				: <div className={style.users_wrapper}>
 					{user}
 				</div>}
 		</>

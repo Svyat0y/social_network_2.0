@@ -12,6 +12,7 @@
 
 .nav {
     width: 100%;
+    padding-top: 25px;
 }
 
 
@@ -79,19 +80,20 @@
     height: 100%;
     border-radius: 50%;
 }
+
 .user_name {
     color: #E8E0CF;
     margin-top: 4px;
     overflow-y: hidden;
 }
+
 /* style for aside avatars end*/
 
 /* styles for aside end */
 
 
-
 /* media styles for aside */
-@media screen and (max-width: 991px){
+@media screen and (max-width: 991px) {
     aside {
         position: absolute;
         left: 0;
@@ -103,9 +105,15 @@
         transform: translateY(-100%);
         overflow: scroll !important;
     }
+
     .avatars_wrapper {
         margin-top: 50px;
         margin-bottom: 25px;
     }
+
+    .nav {
+        text-align: center;
+    }
 }
+
 /* media styles for aside end */

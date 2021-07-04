@@ -15,7 +15,7 @@ const Login = (props) => {
 		loginAction(values.email, values.password, values.rememberMe, values.captcha)
 	}
 
-	if(isOwner) return <Redirect to={"/"}/>
+	if (isOwner) return <Redirect to={"/"}/>
 
 	return (
 		<div className={style.login_wrapper}>

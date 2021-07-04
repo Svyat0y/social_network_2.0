@@ -15,7 +15,7 @@
 
 /* styles for dialogs users */
 
-.messages_users_block  {
+.messages_users_block {
     width: 35%;
     max-height: 100%;
     overflow-y: auto;
@@ -58,7 +58,7 @@
     color: #E8E0CF;
 }
 
-    /* styles for dialogs users end */
+/* styles for dialogs users end */
 
 
 /* styles for dialogs messages container */
@@ -82,6 +82,7 @@
     -webkit-appearance: none;
     width: 10px;
 }
+
 .dialogs_messages_container::-webkit-scrollbar-thumb {
     background: #5B555F;
 }
@@ -121,12 +122,9 @@
     margin-top: 10px;
 }
 
-.dialog_message_form button:hover {
-    background: #E8E0CF;
-}
-
 .dialog_message_form button:active {
     transform: scale(0.99);
+    background: #E8E0CF;
 }
 
 .back_to_listUsers {
@@ -173,18 +171,23 @@
     .messages_users_block {
         width: 100%;
     }
+
     .dialogs_messages_block {
         width: 100%;
         display: none;
     }
+
     .messages_users_block_isHidden {
         width: 0;
     }
+
     .dialogs_messages_block_isOpen {
         display: flex;
     }
+
     .back_to_listUsers {
         display: block;
     }
 }
+
 /* media styles for messages page end */

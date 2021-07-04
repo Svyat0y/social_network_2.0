@@ -3,35 +3,33 @@ import style from "./Profile.module.css";
 
 const ProfileStatusWithHooks = (props) => {
 
-	const {status, updateUserStatus} = props
+	const {status, updateUserStatus, userId} = props
 
 	const [editMode, setEditMode] = useState(false)
 	const [activeStatus, setActiveStatus] = useState(status)
 
-	useEffect(() => {setActiveStatus(status)},[status])
+	useEffect(() => {
+		setActiveStatus(status)
+	}, [status])
 
 	const activatedEditMode = () => {
-		setEditMode(true)
+		if (userId === undefined) setEditMode(true)
 	}
 
 	const deactivatedEditMode = () => {
-		setEditMode(false)
+		setEditMode(false);
 		updateUserStatus(activeStatus)
 	}
 
-	const updateLocalStatus = (e) => {
-		setActiveStatus(e.target.value)
-	}
+	const updateLocalStatus = (e) => setActiveStatus(e.target.value)
 
-	const handleFocus = (e) => {
-		e.target.select()
-	}
+	const handleFocus = (e) => e.target.select()
 
 	return (
 		<div className={style.profile_status_wrapper}>
 			{editMode
 				? <input onBlur={deactivatedEditMode} type="text" onChange={updateLocalStatus} value={activeStatus}
-				onFocus={handleFocus}/>
+						 onFocus={handleFocus}/>
 				: <span onClick={activatedEditMode}>{status}</span>}
 		</div>
 	);

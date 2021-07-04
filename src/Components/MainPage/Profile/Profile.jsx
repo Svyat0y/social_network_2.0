@@ -6,7 +6,7 @@ import SocialLinks from "./SocialLinks";
 
 const Profile = (props) => {
 
-	const {status, updateUserStatus} = props
+	const {status, updateUserStatus, userId} = props
 	const {aboutMe, fullName, lookingForAJob, lookingForAJobDescription, photos, contacts} = props.profile
 
 	return (
@@ -16,12 +16,14 @@ const Profile = (props) => {
 				<div className={style.profile_img_wrapper}>
 					<img src={photos.large || images.imgProfileNotFound} alt="profile_ava"/>
 				</div>
-				<SocialLinks contacts={contacts} />
+				<SocialLinks contacts={contacts}/>
 			</div>
 
 			<div className={style.profile_info_wrapper}>
 				<h1 className={style.profile_name}>{fullName}</h1>
-				<ProfileStatusWithHooks status={status} updateUserStatus={updateUserStatus} />
+
+				<ProfileStatusWithHooks userId={userId} status={status} updateUserStatus={updateUserStatus}/>
+
 				<div className={style.bio_wrapper}>
 					<div className={style.info_box_lfAJob_wrapper}>
 						<span className={style.info_box_title}>Looking for a job:</span>
@@ -35,7 +37,6 @@ const Profile = (props) => {
 						<span className={style.info_box_title}>About Me:</span>
 						<p className={style.info_box_desc}>{aboutMe}</p>
 					</div>
-					{/*<button className={style.profile_sendMessage_btn}>Send message</button>*/}
 				</div>
 			</div>
 

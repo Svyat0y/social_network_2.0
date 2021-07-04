@@ -17,7 +17,7 @@ const AvatarItem = ({avatarName, avatarImg}) => {
 const AvatarsContainer = ({avatarsData}) => {
 
 	// get an avatar object from the incoming array in props
-	const avatarItem = avatarsData.map(avatar => <AvatarItem key={avatar.id} avatarName={avatar.userName} avatarImg={avatar.userImg}/> )
+	const avatarItem = avatarsData.map(avatar => <AvatarItem key={avatar.id} avatarName={avatar.userName} avatarImg={avatar.userImg}/>)
 
 	return (
 		<div className={style.avatars_wrapper}>

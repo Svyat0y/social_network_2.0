@@ -99,13 +99,13 @@ export const getUserStatus = (userId) => async (dispatch) => {
 
 export const updateUserStatus = (status) => async (dispatch) => {
 	const data = await profileAPI.updateUserStatus(status)
-	if(data.resultCode === 0) dispatch(setUserStatus(status))
+	if (data.resultCode === 0) dispatch(setUserStatus(status))
 }
 
 export const updateBioProfile = (profile) => async (dispatch, getState) => {
 	const userid = getState().auth.id
 	let data = await profileAPI.updateBioProfile(profile)
-	if(data.resultCode === 0) {
+	if (data.resultCode === 0) {
 		dispatch(getUserProfile(userid))
 		dispatch(setUpdateBioSuccess("updating was successfully!"))
 	}
@@ -118,7 +118,7 @@ export const savePhoto = (photo) => async (dispatch) => {
 }
 
 export const updateWasSuccessfully = (successStatus) => (dispatch) => {
-		dispatch(setUpdateBioSuccess(successStatus))
+	dispatch(setUpdateBioSuccess(successStatus))
 }
 
 export const refreshProfileInSettings = () => (dispatch, getState) => {

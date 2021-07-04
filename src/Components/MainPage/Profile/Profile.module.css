@@ -168,9 +168,6 @@
 
 .postMessage_form button:active {
     transform: scale(0.99);
-}
-
-.postMessage_form button:hover {
     background: #E8E0CF;
 }
 
@@ -253,13 +250,13 @@
 
 
 /* media styles for profile page */
-@media screen and (max-width: 991px){
+@media screen and (max-width: 991px) {
     .profileContainer_wrapper {
         padding: 25px 15px;
     }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 767px) {
     .profile_img_wrapper {
         /*min-width: 250px;*/
         /*width: 250px;*/
@@ -267,24 +264,29 @@
     }
 }
 
-@media screen and (max-width: 639px){
+@media screen and (max-width: 639px) {
     .profile_wrapper {
         flex-direction: column;
         align-items: center;
     }
+
     .profile_info_wrapper {
         margin: 0;
     }
+
     .profile_name {
         text-align: center;
         display: block;
         margin-top: 15px;
     }
+
     .postMessage_wrapper {
         flex-direction: column;
     }
+
     .postMessage_user {
         margin-bottom: 10px;
     }
 }
+
 /* media styles for profile page end */

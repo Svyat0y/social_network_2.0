@@ -30,7 +30,9 @@ const DialogsMessages = (props) => {
 			<div className={style.dialogs_messages_footer}>
 				<AddDialogMessageFormRedux onSubmit={addNewDialogMessage}/>
 			</div>
-			<div className={style.back_to_listUsers}><button onClick={openUserList}>{"<< back"}</button></div>
+			<div className={style.back_to_listUsers}>
+				<button onClick={openUserList}>{"<< back"}</button>
+			</div>
 		</div>
 	);
 }
