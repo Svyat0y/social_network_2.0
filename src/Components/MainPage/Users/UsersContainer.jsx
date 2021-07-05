@@ -18,7 +18,7 @@ const UsersContainer = (props) => {
 
 	useEffect(() => {
 		props.requestUsers(currentPage, pageSize)
-		closeMenu()
+		setTimeout(() => closeMenu(), 250)
 	}, [])
 
 	const onPageChanged = (currentPage) => props.requestUsers(currentPage, pageSize)

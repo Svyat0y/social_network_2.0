@@ -16,12 +16,16 @@ const ProfileContainer = (props) => {
 
 	useEffect(() => {
 		refreshProfile()
+		setTimeout(() => closeMenu(), 250)
 	}, [props.match.params.userId])
 
 	// close the menu after rendering the selected component, and scroll up
 	useEffect(() => {
-		closeMenu()
-		window.scrollTo(0, 0)
+		setTimeout(() => {
+			closeMenu()
+			window.scrollTo(0, 0)
+		}, 250)
+
 	}, [])
 
 	const refreshProfile = () => {

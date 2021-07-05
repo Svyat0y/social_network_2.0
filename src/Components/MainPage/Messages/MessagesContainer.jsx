@@ -16,7 +16,7 @@ const MessagesContainer = (props) => {
 
 	// close the menu after rendering the selected component
 	useEffect(() => {
-		closeMenu()
+		setTimeout(() => closeMenu(), 250)
 	}, [])
 
 	const openUserList = () => setTimeout(() => openUserslistAction(false), 250)

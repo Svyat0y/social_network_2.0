@@ -6,10 +6,14 @@ import {Element} from "./Common/FormControls/FormControls";
 
 const Input = Element("input")
 
-const LoginForm = ({handleSubmit, captchaUrl}) => {
+const LoginForm = (props) => {
+
+	const {handleSubmit, captchaUrl, error} = props
+
 	return (
 		<form onSubmit={handleSubmit} className={style.login_form} action="">
 			<h5>Login</h5>
+			{error && <span className={style.commonError}>{error}</span>}
 			<span>
 				<Field name="email" placeholder="email" component={Input} validate={[required]}/>
 			</span>

@@ -3,10 +3,15 @@ import style from "./Aside.module.css";
 import {NavLink} from "react-router-dom";
 import ConnectedAvatarsContainer from "./AvatarsContainer/AvatarsContainer";
 import {connect} from "react-redux";
+import {closeMenu} from "../../Redux/side-bar-reducer";
 
 const Aside = (props) => {
 
-	const {menuVisible} = props
+	const {menuVisible, closeMenu} = props
+
+	const closeMenuAction = () => {
+		setTimeout(() => closeMenu(), 250)
+	}
 
 	useEffect(() => {
 		const body = document.querySelector('body');
@@ -26,6 +31,7 @@ const Aside = (props) => {
 			<div>
 				<ConnectedAvatarsContainer/>
 			</div>
+			<span onClick={closeMenuAction} className={style.closeMenu_wrapper}> </span>
 		</aside>
 	);
 }
@@ -34,4 +40,4 @@ const mapStateToProps = (state) => ({
 	menuVisible: state.sideBar.menuVisible
 })
 
-export default connect(mapStateToProps, null)(Aside);
+export default connect(mapStateToProps, {closeMenu})(Aside);

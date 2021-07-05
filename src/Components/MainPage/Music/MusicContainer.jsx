@@ -9,7 +9,7 @@ const MusicContainer = (props) => {
 
 	// close the menu after rendering the selected component
 	useEffect(() => {
-		closeMenu()
+		setTimeout(() => closeMenu(), 250)
 	}, [])
 
 	return <div className={style.music_wrapper}>Expected in the future!</div>

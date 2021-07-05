@@ -16,7 +16,7 @@ const SettingsContainer = (props) => {
 
 	useEffect(() => {
 		refreshProfileInSettings()
-		closeMenu()
+		setTimeout(() => closeMenu(), 250)
 	}, [])
 
 	useEffect(() => {

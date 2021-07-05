@@ -12,7 +12,7 @@
 
 .nav {
     width: 100%;
-    padding-top: 25px;
+    padding-top: 40px;
 }
 
 
@@ -87,6 +87,43 @@
     overflow-y: hidden;
 }
 
+.closeMenu_wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    opacity: 0.3;
+    display: none;
+    user-select: none;
+}
+
+.closeMenu_wrapper:hover {
+    opacity: 1;
+}
+
+.closeMenu_wrapper:active {
+    transform: scale(0.97);
+}
+
+.closeMenu_wrapper:before,
+.closeMenu_wrapper:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 2px;
+    background: #e8e0cf;
+    width: 30px;
+}
+
+.closeMenu_wrapper:before {
+    transform: rotate(-45deg);
+}
+
+.closeMenu_wrapper:after {
+    transform: rotate(45deg);
+}
+
 /* style for aside avatars end*/
 
 /* styles for aside end */
@@ -113,6 +150,11 @@
 
     .nav {
         text-align: center;
+        position: relative;
+    }
+
+    .closeMenu_wrapper {
+        display: block;
     }
 }
 

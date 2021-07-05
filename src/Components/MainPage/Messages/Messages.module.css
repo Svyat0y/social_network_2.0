@@ -140,6 +140,7 @@
     background: transparent;
     border: 1px solid #8e8888;
     border-radius: 5px;
+    cursor: default;
 }
 
 .back_to_listUsers button:active {
