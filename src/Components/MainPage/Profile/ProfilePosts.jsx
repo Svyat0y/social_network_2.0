@@ -27,7 +27,7 @@ const ProfilePosts = (props) => {
 
 	const {postData} = props
 
-	const post = postData.map(p => <Post key={p.id} {...p}/>).reverse()
+	const post = [...postData].reverse().map(p => <Post key={p.id} {...p}/>)
 
 	const addNewPosMessage = (formValues) => props.addPostMessage(formValues.newPostMessage)
 

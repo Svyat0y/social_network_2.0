@@ -79,12 +79,10 @@ export const requestUsers = (page, pageSize) => async (dispatch) => {
 	dispatch(setUsers(data.items))
 }
 
-// subscribe
-export const followAccept = (userId) => async (dispatch) => {
-
+// subscribe unsubscribe unfollow flow
+export const subscribeUnsubscribeFlow = async (dispatch, userId, apiMethod) => {
 	dispatch(setFollowingInProgress(true, userId))
-
-	const data = await subscribeAPI.follow(userId)
+	const data = await apiMethod(userId)
 
 	if (data.resultCode === 0) {
 		dispatch(setToggleFollow((userId)))
@@ -92,16 +90,16 @@ export const followAccept = (userId) => async (dispatch) => {
 	}
 }
 
+// subscribe
+export const followAccept = (userId) => async (dispatch) => {
+	await subscribeUnsubscribeFlow(dispatch, userId, subscribeAPI.follow.bind(subscribeAPI))
+
+
+}
+
 // unsubscribe
 export const unfollowAccept = (userId) => async (dispatch) => {
-
-	dispatch(setFollowingInProgress(true, userId))
-
-	const data = await subscribeAPI.unfollow(userId)
-	if (data.resultCode === 0) {
-		dispatch(setToggleFollow((userId)))
-		dispatch(setFollowingInProgress(false, userId))
-	}
+	await subscribeUnsubscribeFlow(dispatch, userId, subscribeAPI.unfollow.bind(subscribeAPI))
 }
 
 export default usersReducer;

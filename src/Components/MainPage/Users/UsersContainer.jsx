@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useCallback, useEffect} from "react";
 import {connect} from "react-redux";
 import {followAccept, requestUsers, unfollowAccept} from "../../../Redux/users-reducer";
 import Users from "./Users";
@@ -21,7 +21,11 @@ const UsersContainer = (props) => {
 		setTimeout(() => closeMenu(), 250)
 	}, [])
 
-	const onPageChanged = (currentPage) => props.requestUsers(currentPage, pageSize)
+	const onPageChanged = useCallback(currentPage => {
+		props.requestUsers(currentPage, pageSize)
+	}, [currentPage]);
+
+	// const onPageChanged = (currentPage) => props.requestUsers(currentPage, pageSize); console.log("asd")
 
 	return <Users {...props} onPageChanged={onPageChanged}/>
 }
