@@ -1,5 +1,5 @@
-import {authAPI, securityAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
+import { authAPI, securityAPI } from "../api/api";
+import { stopSubmit } from "redux-form";
 
 const SET_USER_DATA = "SET_USER_DATA"
 const SET_CAPTCHA = "SET_CAPTCHA"
@@ -18,13 +18,13 @@ const authReducer = (state = initialState, action) => {
 	switch (action.type) {
 
 		case SET_USER_DATA:
-			return {...state, ...action.payload}
+			return { ...state, ...action.payload }
 
 		case SET_CAPTCHA:
-			return {...state, captchaUrl: action.payload}
+			return { ...state, captchaUrl: action.payload }
 
 		case SET_OWNER:
-			return {...state, isOwner: action.payload}
+			return { ...state, isOwner: action.payload }
 
 		default:
 			return state
@@ -32,9 +32,9 @@ const authReducer = (state = initialState, action) => {
 }
 
 //action creators
-export const setUserData = (id, email, login, isAuth) => ({type: SET_USER_DATA, payload: {id, email, login, isAuth}})
-export const setCaptchaUrl = (captchaUrl) => ({type: SET_CAPTCHA, payload: captchaUrl})
-export const setOwner = (owner) => ({type: SET_OWNER, payload: owner})
+export const setUserData = (id, email, login, isAuth) => ({ type: SET_USER_DATA, payload: { id, email, login, isAuth } })
+export const setCaptchaUrl = (captchaUrl) => ({ type: SET_CAPTCHA, payload: captchaUrl })
+export const setOwner = (owner) => ({ type: SET_OWNER, payload: owner })
 
 
 // thunk creators
@@ -43,7 +43,7 @@ export const setOwner = (owner) => ({type: SET_OWNER, payload: owner})
 export const getAuthUserData = () => async (dispatch) => {
 	let data = await authAPI.me()
 	if (data.resultCode === 0) {
-		let {id, email, login} = data.data
+		let { id, email, login } = data.data
 		dispatch(setUserData(id, email, login, true))
 		dispatch(setOwner(true))
 	}
@@ -59,7 +59,7 @@ export const loginAction = (email, password, rememberMe, captcha) => async (disp
 			dispatch(getCaptchaUrl())
 		}
 		const errorMessage = data.messages ? data.messages[0] : "Some error"
-		dispatch(stopSubmit("login", {_error: errorMessage}))
+		dispatch(stopSubmit("login", { _error: errorMessage }))
 	}
 }
 

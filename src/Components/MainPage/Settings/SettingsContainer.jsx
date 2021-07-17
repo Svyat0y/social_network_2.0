@@ -1,14 +1,14 @@
-import React, {useEffect} from "react";
-import {connect} from "react-redux";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
 import Settings from "./Settings";
-import {refreshProfileInSettings, savePhoto, updateBioProfile, updateWasSuccessfully} from "../../../Redux/profile-reducer";
+import { refreshProfileInSettings, savePhoto, updateBioProfile, updateWasSuccessfully } from "../../../Redux/profile-reducer";
 import Preloader from "../../Common/Preloader/Preloader";
-import {getProfile, getUpdatingBioSuccess} from "../../../Redux/selectors/profile-selectors";
-import {closeMenu} from "../../../Redux/side-bar-reducer";
+import { getProfile, getUpdatingBioSuccess } from "../../../Redux/selectors/profile-selectors";
+import { closeMenu } from "../../../Redux/side-bar-reducer";
 
 const SettingsContainer = (props) => {
 
-	const {profile, refreshProfileInSettings, updateBioProfile, updatingBioSuccess, updateWasSuccessfully, savePhoto, closeMenu} = props
+	const { profile, refreshProfileInSettings, updateBioProfile, updatingBioSuccess, updateWasSuccessfully, savePhoto, closeMenu } = props
 
 	const uploadPhoto = (e) => {
 		if (e.target.files) savePhoto(e.target.files[0])
@@ -22,10 +22,10 @@ const SettingsContainer = (props) => {
 	useEffect(() => {
 		return () => {
 			setTimeout(() => {
-				updateWasSuccessfully("")
+				updateWasSuccessfully()
 			}, 4000)
 		}
-	}, [updatingBioSuccess])
+	}, [ updatingBioSuccess ])
 
 	const saveSettingsForm = (formData) => {
 		updateBioProfile(formData)
@@ -34,7 +34,8 @@ const SettingsContainer = (props) => {
 	if (!profile) return <Preloader/>
 
 	return (
-		<Settings saveSettingsForm={saveSettingsForm} profile={profile} updatingBioSuccess={updatingBioSuccess} uploadPhoto={uploadPhoto}/>
+		<Settings saveSettingsForm={ saveSettingsForm } profile={ profile } updatingBioSuccess={ updatingBioSuccess }
+				  uploadPhoto={ uploadPhoto }/>
 	);
 }
 

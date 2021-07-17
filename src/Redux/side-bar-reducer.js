@@ -43,18 +43,18 @@ const sideBarReducer = (state = initialState, action) => {
 	switch (action.type) {
 
 		case SET_OPEN_MENU:
-			return {...state, menuVisible: action.payload}
+			return { ...state, menuVisible: action.payload }
 
 		case SET_CLOSE_MENU:
-			return {...state, menuVisible: action.payload}
+			return { ...state, menuVisible: action.payload }
 
 		default:
 			return state
 	}
 }
 
-export const setOpenMenu = () => ({type: SET_OPEN_MENU, payload: true})
-export const setCloseMenu = () => ({type: SET_CLOSE_MENU, payload: false})
+export const setOpenMenu = () => ({ type: SET_OPEN_MENU, payload: true })
+export const setCloseMenu = () => ({ type: SET_CLOSE_MENU, payload: false })
 
 
 export const openMenu = () => (dispatch) => {

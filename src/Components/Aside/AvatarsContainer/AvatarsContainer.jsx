@@ -1,35 +1,36 @@
 import style from "../Aside.module.css";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import React from "react";
-import {getAvatars} from "../../../Redux/selectors/side-bar-selectors";
+import { getAvatars } from "../../../Redux/selectors/side-bar-selectors";
 
-const AvatarItem = ({avatarName, avatarImg}) => {
+const AvatarItem = ({ avatarName, avatarImg }) => {
 	return (
-		<div className={style.avatar_wrapper}>
-			<div className={style.img_wrapper}>
-				<img src={avatarImg} alt="userAvatar"/>
+		<div className={ style.avatar_wrapper }>
+			<div className={ style.img_wrapper }>
+				<img src={ avatarImg } alt="userAvatar"/>
 			</div>
-			<span className={style.user_name}>{avatarName}</span>
+			<span className={ style.user_name }>{ avatarName }</span>
 		</div>
 	)
 }
 
-const AvatarsContainer = ({avatarsData}) => {
+const AvatarsContainer = ({ avatarsData }) => {
 
 	// get an avatar object from the incoming array in props
-	const avatarItem = avatarsData.map(avatar => <AvatarItem key={avatar.id} avatarName={avatar.userName} avatarImg={avatar.userImg}/>)
+	const avatarItem = avatarsData.map(avatar => <AvatarItem key={ avatar.id } avatarName={ avatar.userName }
+															 avatarImg={ avatar.userImg }/>)
 
 	return (
-		<div className={style.avatars_wrapper}>
+		<div className={ style.avatars_wrapper }>
 			<h5>Users</h5>
-			<div className={style.avatars_box}>
-				{avatarItem}
+			<div className={ style.avatars_box }>
+				{ avatarItem }
 			</div>
 		</div>
 	);
 }
 
-const mapStateToProps = state => ({avatarsData: getAvatars(state)})
+const mapStateToProps = state => ({ avatarsData: getAvatars(state) })
 
 // connected avatars container to store
 export default connect(mapStateToProps, null)(AvatarsContainer);

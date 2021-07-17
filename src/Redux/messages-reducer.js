@@ -1,4 +1,4 @@
-import {reset} from "redux-form";
+import { reset } from "redux-form";
 
 const SEND_MY_MESSAGE_TEXT = "SEND_MY_MESSAGE_TEXT"
 const SET_OPEN_DIALOG = "SET_OPEN_DIALOG"
@@ -37,7 +37,7 @@ const initialState = {
 			userName: 'Vlad'
 		}
 	],
-	dialogsMessages: [{id: 0, message: 'hi'}, {id: 1, message: 'how are u?'}, {id: 2, message: 'you here?'}],
+	dialogsMessages: [ { id: 0, message: 'hi' }, { id: 1, message: 'how are u?' }, { id: 2, message: 'you here?' } ],
 	openDialogWithUser: false
 }
 
@@ -47,16 +47,16 @@ const messagesReducer = (state = initialState, action) => {
 		case SEND_MY_MESSAGE_TEXT:
 			if (action.payload && action.payload.replace(/\s/g, "")) {
 				return {
-					...state, dialogsMessages: [...state.dialogsMessages, {
+					...state, dialogsMessages: [ ...state.dialogsMessages, {
 						id: 3,
 						message: action.payload
-					}]
+					} ]
 				}
 			}
 			return state
 
 		case SET_OPEN_DIALOG:
-			return {...state, openDialogWithUser: action.payload}
+			return { ...state, openDialogWithUser: action.payload }
 
 		default:
 			return state
@@ -64,19 +64,19 @@ const messagesReducer = (state = initialState, action) => {
 }
 
 //action creators
-export const sendMyMessage = (body) => ({type: SEND_MY_MESSAGE_TEXT, payload: body})
-export const setOpenDialogWithUser = (isOpen) => ({type: SET_OPEN_DIALOG, payload: isOpen})
+export const sendMyMessage = (body) => ({ type: SEND_MY_MESSAGE_TEXT, payload: body })
+export const setOpenDialogWithUser = (isOpen) => ({ type: SET_OPEN_DIALOG, payload: isOpen })
 
 
 // thunk creators
 
 // send message in dialogs
-export const sendMessage = (userId, body) => (dispatch) => {
+export const sendMessage = (body) => (dispatch) => {
 	dispatch(sendMyMessage(body))
 	dispatch(reset("addDialogMessageForm"))
 }
 
-export const openUserslistAction = (isOpen) => (dispatch) => {
+export const openUsersListAction = (isOpen) => (dispatch) => {
 	dispatch(setOpenDialogWithUser(isOpen))
 }
 

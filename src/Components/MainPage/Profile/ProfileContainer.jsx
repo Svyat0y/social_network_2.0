@@ -1,23 +1,33 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import style from "./Profile.module.css"
-import {connect} from "react-redux";
-import {compose} from "redux";
-import {withRouter} from "react-router-dom"
-import {addPostMessage, getUserProfile, getUserStatus, updateUserStatus} from "../../../Redux/profile-reducer";
+import { connect } from "react-redux";
+import { compose } from "redux";
+import { withRouter } from "react-router-dom"
+import { addPostMessage, getUserProfile, getUserStatus, updateUserStatus } from "../../../Redux/profile-reducer";
 import Profile from "./Profile";
 import ProfilePosts from "./ProfilePosts";
 import Preloader from "../../Common/Preloader/Preloader";
-import {getAuthorizedId, getPostData, getProfile, getStatus} from "../../../Redux/selectors/profile-selectors";
-import {closeMenu} from "../../../Redux/side-bar-reducer";
+import { getAuthorizedId, getPostData, getProfile, getStatus } from "../../../Redux/selectors/profile-selectors";
+import { closeMenu } from "../../../Redux/side-bar-reducer";
 
 const ProfileContainer = (props) => {
 
-	const {profile, postData, addPostMessage, status, getUserProfile, getUserStatus, authorizedUserid, updateUserStatus, closeMenu} = props
+	const {
+		profile,
+		postData,
+		addPostMessage,
+		status,
+		getUserProfile,
+		getUserStatus,
+		authorizedUserid,
+		updateUserStatus,
+		closeMenu
+	} = props
 
 	useEffect(() => {
 		refreshProfile()
 		setTimeout(() => closeMenu(), 250)
-	}, [props.match.params.userId])
+	}, [ props.match.params.userId ])
 
 	// close the menu after rendering the selected component, and scroll up
 	useEffect(() => {
@@ -38,9 +48,9 @@ const ProfileContainer = (props) => {
 	if (!profile) return <Preloader/>
 
 	return (
-		<div className={style.profileContainer_wrapper}>
-			<Profile profile={profile} status={status} updateUserStatus={updateUserStatus} userId={props.match.params.userId}/>
-			<ProfilePosts postData={postData} addPostMessage={addPostMessage}/>
+		<div className={ style.profileContainer_wrapper }>
+			<Profile profile={ profile } status={ status } updateUserStatus={ updateUserStatus } userId={ props.match.params.userId }/>
+			<ProfilePosts postData={ postData } addPostMessage={ addPostMessage }/>
 		</div>
 	);
 }
@@ -54,5 +64,5 @@ const mapStateToProps = (state) => ({
 
 export default compose(
 	withRouter,
-	connect(mapStateToProps, {getUserProfile, addPostMessage, getUserStatus, updateUserStatus, closeMenu})
+	connect(mapStateToProps, { getUserProfile, addPostMessage, getUserStatus, updateUserStatus, closeMenu })
 )(ProfileContainer);

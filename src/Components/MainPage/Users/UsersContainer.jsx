@@ -1,6 +1,6 @@
-import React, {useCallback, useEffect} from "react";
-import {connect} from "react-redux";
-import {followAccept, requestUsers, unfollowAccept} from "../../../Redux/users-reducer";
+import React, { useCallback, useEffect } from "react";
+import { connect } from "react-redux";
+import { followAccept, requestUsers, unfollowAccept } from "../../../Redux/users-reducer";
 import Users from "./Users";
 import {
 	getCurrentPage,
@@ -10,24 +10,25 @@ import {
 	getTotalCount,
 	getUsers
 } from "../../../Redux/selectors/users-selectors";
-import {closeMenu} from "../../../Redux/side-bar-reducer";
+import { closeMenu } from "../../../Redux/side-bar-reducer";
 
 const UsersContainer = (props) => {
 
-	const {currentPage, pageSize, closeMenu} = props
+	const { currentPage, pageSize, closeMenu } = props
 
 	useEffect(() => {
 		props.requestUsers(currentPage, pageSize)
-		setTimeout(() => closeMenu(), 250)
+		setTimeout(() => closeMenu(), 250);
+		console.log("asd")
 	}, [])
 
 	const onPageChanged = useCallback(currentPage => {
 		props.requestUsers(currentPage, pageSize)
-	}, [currentPage]);
+	}, [ currentPage ]);
 
 	// const onPageChanged = (currentPage) => props.requestUsers(currentPage, pageSize); console.log("asd")
 
-	return <Users {...props} onPageChanged={onPageChanged}/>
+	return <Users { ...props } onPageChanged={ onPageChanged }/>
 }
 
 const mapStateToProps = (state) => ({
@@ -39,4 +40,4 @@ const mapStateToProps = (state) => ({
 	isFetching: getIsFetching(state)
 })
 
-export default connect(mapStateToProps, {requestUsers, followAccept, unfollowAccept, closeMenu})(UsersContainer);
+export default connect(mapStateToProps, { requestUsers, followAccept, unfollowAccept, closeMenu })(UsersContainer);

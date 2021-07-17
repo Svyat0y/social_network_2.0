@@ -1,4 +1,4 @@
-import {subscribeAPI, usersAPI} from "../api/api";
+import { subscribeAPI, usersAPI } from "../api/api";
 
 const SET_USERS_DATA = "SET_USERS_DATA";
 const SET_TOTAL_COUNT = "SET_TOTAL_COUNT";
@@ -21,21 +21,21 @@ const initialState = {
 const usersReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_USERS_DATA:
-			return {...state, users: action.payload}
+			return { ...state, users: action.payload }
 
 		case SET_TOTAL_COUNT:
-			return {...state, totalCount: action.payload}
+			return { ...state, totalCount: action.payload }
 
 		case SET_CURRENT_PAGE:
-			return {...state, currentPage: action.payload}
+			return { ...state, currentPage: action.payload }
 
 		case SET_IS_FETCHING:
-			return {...state, isFetching: action.payload}
+			return { ...state, isFetching: action.payload }
 
 		case SET_FOLLOWING_IN_PROGRESS:
 			return {
 				...state, followingInProgress: action.payload.isFollowing
-					? [...state.followingInProgress, action.payload.userId]
+					? [ ...state.followingInProgress, action.payload.userId ]
 					: state.followingInProgress.filter(id => id !== action.payload.userId)
 			}
 
@@ -43,9 +43,9 @@ const usersReducer = (state = initialState, action) => {
 			return {
 				...state, users: state.users.map(u => {
 					if (action.payload === u.id && !u.followed) {
-						return {...u, followed: true}
+						return { ...u, followed: true }
 					} else if (action.payload === u.id && u.followed) {
-						return {...u, followed: false}
+						return { ...u, followed: false }
 					}
 					return u
 				})
@@ -57,12 +57,12 @@ const usersReducer = (state = initialState, action) => {
 }
 
 //action creators
-const setUsers = (users) => ({type: SET_USERS_DATA, payload: users})
-const setTotalCount = (totalCount) => ({type: SET_TOTAL_COUNT, payload: totalCount})
-const setCurrentPage = (page) => ({type: SET_CURRENT_PAGE, payload: page})
-const setToggleFollow = (userId) => ({type: SET_TOGGLE_FOLLOW, payload: userId})
-const setIsFetching = (isFetching) => ({type: SET_IS_FETCHING, payload: isFetching})
-const setFollowingInProgress = (isFollowing, userId) => ({type: SET_FOLLOWING_IN_PROGRESS, payload: {isFollowing, userId}})
+const setUsers = (users) => ({ type: SET_USERS_DATA, payload: users })
+const setTotalCount = (totalCount) => ({ type: SET_TOTAL_COUNT, payload: totalCount })
+const setCurrentPage = (page) => ({ type: SET_CURRENT_PAGE, payload: page })
+const setToggleFollow = (userId) => ({ type: SET_TOGGLE_FOLLOW, payload: userId })
+const setIsFetching = (isFetching) => ({ type: SET_IS_FETCHING, payload: isFetching })
+const setFollowingInProgress = (isFollowing, userId) => ({ type: SET_FOLLOWING_IN_PROGRESS, payload: { isFollowing, userId } })
 
 
 //thunk creators

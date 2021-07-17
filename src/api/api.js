@@ -11,13 +11,13 @@ const instance = axios.create({
 
 export const profileAPI = {
 	getProfile(userId) {
-		return instance.get(`profile/${userId}`)
+		return instance.get(`profile/${ userId }`)
 	},
 	getStatus(userId) {
-		return instance.get(`profile/status/${userId}`).then(response => response.data)
+		return instance.get(`profile/status/${ userId }`).then(response => response.data)
 	},
 	updateUserStatus(status) {
-		return instance.put(`profile/status`, {status}).then(response => response.data)
+		return instance.put(`profile/status`, { status }).then(response => response.data)
 	},
 	updateBioProfile(profile) {
 		return instance.put(`profile`, profile).then(response => response.data)
@@ -36,7 +36,7 @@ export const profileAPI = {
 
 export const usersAPI = {
 	getUsers(currentPage, pageSize) {
-		return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data)
+		return instance.get(`users?page=${ currentPage }&count=${ pageSize }`).then(response => response.data)
 	}
 }
 
@@ -45,7 +45,7 @@ export const authAPI = {
 		return instance.get(`auth/me`).then(response => response.data)
 	},
 	login(email, password, rememberMe = false, captcha = null) {
-		return instance.post(`auth/login`, {email, password, rememberMe, captcha}).then(response => response.data)
+		return instance.post(`auth/login`, { email, password, rememberMe, captcha }).then(response => response.data)
 	},
 	logout() {
 		return instance.delete(`auth/login`).then(response => response.data)
@@ -54,10 +54,10 @@ export const authAPI = {
 
 export const subscribeAPI = {
 	follow(userId) {
-		return instance.post(`follow/${userId}`).then(response => response.data)
+		return instance.post(`follow/${ userId }`).then(response => response.data)
 	},
 	unfollow(userId) {
-		return instance.delete(`follow/${userId}`).then(response => response.data)
+		return instance.delete(`follow/${ userId }`).then(response => response.data)
 	}
 }
 

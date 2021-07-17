@@ -1,7 +1,7 @@
-import {Element} from "../../Common/FormControls/FormControls";
-import {maxLengthCreator} from "../../../utils/validators";
+import { Element } from "../../Common/FormControls/FormControls";
+import { maxLengthCreator } from "../../../utils/validators";
 import style from "./Settings.module.css";
-import {Field, reduxForm} from "redux-form";
+import { Field, reduxForm } from "redux-form";
 import React from "react";
 
 const Input = Element("input")
@@ -10,55 +10,57 @@ const maxLength300 = maxLengthCreator(300)
 
 const SettingsForm = (props) => {
 
-	const {handleSubmit, profile, updatingBioSuccess} = props
+	const { handleSubmit, profile, updatingBioSuccess } = props
 
 	return (
-		<form onSubmit={handleSubmit} className={style.settings_form}>
+		<form onSubmit={ handleSubmit } className={ style.settings_form }>
 
-			<div className={style.settings_box_wrapper}>
+			<div className={ style.settings_box_wrapper }>
 				<span>Full Name:</span>
-				<div className={style.input_info_wr}>
-					<Field name="fullName" component={Input} placeholder="Full name"/>
+				<div className={ style.input_info_wr }>
+					<Field name="fullName" component={ Input } placeholder="Full name"/>
 				</div>
 			</div>
 
-			<div className={style.settings_box_wrapper}>
+			<div className={ style.settings_box_wrapper }>
 				<span>Looking For A Job:</span>
-				<div className={style.input_info_wr}>
-					<Field name="lookingForAJob" component={Input} type="checkbox"/>
+				<div className={ style.input_info_wr }>
+					<Field name="lookingForAJob" component={ Input } type="checkbox"/>
 				</div>
 			</div>
 
-			<div className={style.settings_box_wrapper}>
+			<div className={ style.settings_box_wrapper }>
 				<span>Job Description:</span>
-				<div className={style.input_info_wr}>
-					<Field name="lookingForAJobDescription" component={Textarea} validate={[maxLength300]} placeholder="Your skills"/>
+				<div className={ style.input_info_wr }>
+					<Field name="lookingForAJobDescription" component={ Textarea } validate={ [ maxLength300 ] } placeholder="Your skills"/>
 				</div>
 			</div>
 
-			<div className={style.settings_box_wrapper}>
+			<div className={ style.settings_box_wrapper }>
 				<span>About Me:</span>
-				<div className={style.input_info_wr}>
-					<Field name="aboutMe" component={Textarea} validate={[maxLength300]} placeholder="About me"/>
+				<div className={ style.input_info_wr }>
+					<Field name="aboutMe" component={ Textarea } validate={ [ maxLength300 ] } placeholder="About me"/>
 				</div>
 			</div>
 
-			<h5 className={style.contacts_header}>Contacts</h5>
+			<h5 className={ style.contacts_header }>Contacts</h5>
 
-			{Object.keys(profile.contacts).map(key => {
-				return <div key={key} className={style.settings_box_wrapper}>
-					<span>{key}:</span>
-					<div className={style.input_info_wr}>
-						<Field name={"contacts." + key} component={Input}/>
+			{ Object.keys(profile.contacts).map(key => {
+				return <div key={ key } className={ style.settings_box_wrapper }>
+					<span>{ key }:</span>
+					<div className={ style.input_info_wr }>
+						<Field name={ "contacts." + key } component={ Input }/>
 					</div>
 				</div>
-			})}
-			<button>Save changes</button>
-			<span className={style.updating_success}>{updatingBioSuccess}</span>
+			}) }
+			<div className={ style.saveBtn_action_wrapper }>
+				<button>Save changes</button>
+				<span className={ style.updating_success }>{ updatingBioSuccess }</span>
+			</div>
 		</form>
 	);
 }
 
-const SettingsFormRedux = reduxForm({form: "settingsForm", enableReinitialize: true})(SettingsForm)
+const SettingsFormRedux = reduxForm({ form: "settingsForm", enableReinitialize: true })(SettingsForm)
 
 export default SettingsFormRedux;

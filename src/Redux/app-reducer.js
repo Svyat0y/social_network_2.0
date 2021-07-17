@@ -1,4 +1,4 @@
-import {getAuthUserData} from "./auth-reducer";
+import { getAuthUserData } from "./auth-reducer";
 
 const INITIALIZED_SUCCESS = "INITIALIZED_SUCCESS"
 
@@ -10,7 +10,7 @@ const appReducer = (state = initialState, action) => {
 	switch (action.type) {
 
 		case INITIALIZED_SUCCESS:
-			return {...state, initialized: true}
+			return { ...state, initialized: true }
 
 		default:
 			return state
@@ -18,7 +18,7 @@ const appReducer = (state = initialState, action) => {
 }
 
 //action creators
-export const initializeSuccess = () => ({type: INITIALIZED_SUCCESS})
+export const initializeSuccess = () => ({ type: INITIALIZED_SUCCESS })
 
 
 //thunk creators
@@ -26,7 +26,7 @@ export const initializeSuccess = () => ({type: INITIALIZED_SUCCESS})
 //initialization application
 export const startInitialize = () => (dispatch) => {
 	const promiseMe = dispatch(getAuthUserData())
-	Promise.all([promiseMe]).then(() => {
+	Promise.all([ promiseMe ]).then(() => {
 		dispatch(initializeSuccess())
 	})
 }
